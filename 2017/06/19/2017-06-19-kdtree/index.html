@@ -49,7 +49,8 @@
 		<p><figure class="figure"><img src="http://i.imgur.com/18sPmUN.png" alt="cover"><figcaption class="figure__caption">cover</figcaption></figure></p>
 <p>之前在做<a href="https://github.com/sjwhitworth/golearn" target="_blank" rel="external">Golearn</a>時，為了加速<a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E8%BF%91%E9%84%B0%E5%B1%85%E6%B3%95" target="_blank" rel="external">knn</a>的搜尋速度，因此實做了k-d tree，當時找了很久，總是找不到一篇完整的文章講解 <strong>如何將kdtree應用在knn中</strong>，因此決定寫這篇來紀錄下我的作法。</p>
 <h2 id="什麼是k-d-tree"><a href="#什麼是k-d-tree" class="headerlink" title="什麼是k-d tree?"></a>什麼是k-d tree?</h2><p>k-d tree是k-dimensional tree的縮寫，也就是k維樹，簡單來說，就是樹的每一層都是以 <strong>不同的維度標準</strong> 做分割，而不是單純用某個維度來建樹。</p>
-<h3 id="單微度的樹"><a href="#單微度的樹" class="headerlink" title="單微度的樹"></a>單微度的樹</h3><p>通常看到的樹，都是只用其中一個維度的資料來建樹，舉例來說：</p>
+<a id="more"></a>
+<h3 id="單維度的樹"><a href="#單維度的樹" class="headerlink" title="單維度的樹"></a>單維度的樹</h3><p>通常看到的樹，都是只用其中一個維度的資料來建樹，舉例來說：</p>
 <p>有六筆資料如下，每筆資料都只有一個維度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[1, 3, 5, 41, 67, 87]</div></pre></td></tr></table></figure></p>
 <p>直接建樹的話，可能會出現像這樣的樹<br><figure class="figure"><img src="http://i.imgur.com/qUeNFhn.jpg" alt="normal tree"><figcaption class="figure__caption">normal tree</figcaption></figure></p>
 <h3 id="多維度的樹-k-d-tree"><a href="#多維度的樹-k-d-tree" class="headerlink" title="多維度的樹(k-d tree)"></a>多維度的樹(k-d tree)</h3><p>通常用在機器學習的資料不會只有一個維度，舉例來說：</p>
@@ -105,7 +106,7 @@
 </ul>
 </li>
 </ul>
-<p>若對於文章有任何問題，或是有任何寫錯的地方，歡迎直接<a href="https://frozenkp.github.io/about/" target="_blank" rel="external">聯繫我</a><br>若要轉載請附上<a href="https://frozenkp.github.io/2017/05/19/2017-05-19-kdtree/" target="_blank" rel="external">本文連結</a></p>
+<p>若對於文章有任何問題，或是有任何寫錯的地方，歡迎直接<a href="https://frozenkp.github.io/about/" target="_blank" rel="external">聯繫我</a><br>若要轉載請附上<a href="https://frozenkp.github.io/2017/06/19/2017-06-19-kdtree/" target="_blank" rel="external">本文連結</a></p>
 
 	
 
