@@ -394,6 +394,341 @@
             "location": "/Writeups/2018/BambooFox_CTF/infant-gogogo/#binsh", 
             "text": "\u524d\u9762\u6709\u8aaa\u5230\uff0c rdi \u662f\u5beb\u6709  /bin/sh  \u7684 \u4f4d\u5740 \uff0c\u6240\u4ee5\u9700\u8981\u627e\u4e00\u584a\u7a7a\u9593\u4f86\u5beb  /bin/sh  \u5728 gdb \u4e2d\u4f7f\u7528  vmmap  \u4f86\u5c0b\u627e\u53ef\u7528\u7a7a\u9593  gdb-peda$ vmmap\nStart              End                Perm      Name\n0x00400000         0x0048a000         r-xp      /home/frozenkp/Documents/CTF/BambooFox_CTF_2018/infant-gogogo/infant-gogogo\n0x0048a000         0x0051c000         r--p      /home/frozenkp/Documents/CTF/BambooFox_CTF_2018/infant-gogogo/infant-gogogo\n0x0051c000         0x0052f000         rw-p      /home/frozenkp/Documents/CTF/BambooFox_CTF_2018/infant-gogogo/infant-gogogo\n0x0052f000         0x00550000         rw-p      [heap]\n0x000000c000000000 0x000000c000001000 rw-p      mapped\n0x000000c41fff8000 0x000000c420100000 rw-p      mapped\n0x00007ffff7f5b000 0x00007ffff7ffb000 rw-p      mapped\n0x00007ffff7ffb000 0x00007ffff7ffd000 r--p      [vvar]\n0x00007ffff7ffd000 0x00007ffff7fff000 r-xp      [vdso]\n0x00007ffffffde000 0x00007ffffffff000 rw-p      [stack]\n0xffffffffff600000 0xffffffffff601000 r-xp      [vsyscall]  \u5176\u4e2d\u6709\u6bb5  0x0051c000         0x0052f000         rw-p  \u662f\u53ef\u5beb\u7684\uff0c\u6211\u9078\u64c7  0x523000  \u4f86\u5beb\uff0c\u76e1\u91cf\u4e0d\u8981\u9078\u64c7\u592a\u524d\u9762\u6216\u592a\u5f8c\u9762\u7684\u4f4d\u7f6e\uff0c\u6015\u8ddf\u5176\u4ed6\u6771\u897f\u885d\u5230  \u53ef\u4ee5\u5beb\u5165\u5230  rdi  \u7684\u6709\u4ee5\u4e0b\u5169\u53e5  0x0000000000485abd : pop rdi ; cmp dword ptr [rcx], eax ; add byte ptr [rax + 0x39], cl ; ret\n0x00000000004518ff : mov qword ptr [rdi], rax ; ret  \u5176\u4e2d\uff0c pop rdi  \u7684 gadget \u5f8c\u9762\u9084\u6709  add byte ptr [rax + 0x39] \uff0c\u6240\u4ee5\u5fc5\u9808\u78ba\u4fdd  rax+0x39 \u662f\u4e00\u6bb5\u53ef\u4ee5\u5beb\u7684\u4f4d\u5740\uff0c\u5426\u5247\u6703\u6b7b\u6389  \u56e0\u6b64\u6211\u5148\u5c07  rax  \u8a2d\u6210 data \u7684\u4f4d\u5740\uff0c\u8a2d\u5b8c  rdi  \u5f8c\uff0c\u518d\u5c07  rax  \u8a2d\u6210  /bin/sh  \uff0c\u6700\u5f8c\u586b\u5165  ptr [rdi]  \u4e2d\u5373\u53ef  \u6240\u6709\u5f97\u689d\u4ef6\u90fd\u8a2d\u5b9a\u5b8c\u6210\u5f8c\uff0c\u57f7\u884c\u5373\u53ef\u62ff\u5230 shell \u56c9 OwO", 
             "title": "/bin/sh"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/", 
+            "text": "Start\n\n\n\n\nChallenge link: \nStart\n\n\nCategoty: pwn\n\n\nWriteup: \nStart\n\n\n\n\nJust a start.\n\n\nnc chall.pwnable.tw 10000\n\n\nstart\n\n\nnc\n\n\nLet\ns start the CTF:{input}\n\n\n\n\nObservation\n\n\nRead length\n\n\ncan read \n0x3c\n bytes\n\n\n\n\nBuf\n\n\nstore on stack and \nstack excutable\n\n\n\n\nRet\n\n\nPayload = 20 bytes\n\n\nSolution\n\n\nLeak stack address\n\n\nIf we want to execute code on stack, we should return $PC to stack at first. However, stack address is not always the same. Thus, we should leak stack address in the beginning.\n\n\nTarget\n\n\nThere is an address (\n0xffffd220\n) after return address.\n\n\n$esp\n will be \n0xffffd21c\n ( \n \n0xffffd220\n) after return, then we can use \nwrite\n to print this address.\n\n\n\n\nReturn\n\n\nReturn to \nmov ecx, esp\n before \nwrite\n to mov buffer to the target.\n\n\n\n\nShellcode\n\n\nAfter leaking address, we get another chance to write. Buffer is $esp (still on the stack).\n\n\nTarget\n\n\nI found that return address on the stack is \n0x%%%%%%T0\n\n- % from the address leaked in advance\n- T is a random number from 0 to f\n\n\nTherefore, just put \n0x%%%%%%T4\n at return address. Then write shellcode after it.\n\n\n\n\nWhich number is T ?\n\n\nThere are 16 possible numbers, so just \nguess\n !!!\n\n\nYou will get shell if you are fortunate enough. OwO", 
+            "title": "Start"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#start", 
+            "text": "Challenge link:  Start  Categoty: pwn  Writeup:  Start   Just a start.  nc chall.pwnable.tw 10000  start", 
+            "title": "Start"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#nc", 
+            "text": "Let s start the CTF:{input}", 
+            "title": "nc"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#observation", 
+            "text": "", 
+            "title": "Observation"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#read-length", 
+            "text": "can read  0x3c  bytes", 
+            "title": "Read length"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#buf", 
+            "text": "store on stack and  stack excutable", 
+            "title": "Buf"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#ret", 
+            "text": "Payload = 20 bytes", 
+            "title": "Ret"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#solution", 
+            "text": "", 
+            "title": "Solution"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#leak-stack-address", 
+            "text": "If we want to execute code on stack, we should return $PC to stack at first. However, stack address is not always the same. Thus, we should leak stack address in the beginning.", 
+            "title": "Leak stack address"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#target", 
+            "text": "There is an address ( 0xffffd220 ) after return address.  $esp  will be  0xffffd21c  (    0xffffd220 ) after return, then we can use  write  to print this address.", 
+            "title": "Target"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#return", 
+            "text": "Return to  mov ecx, esp  before  write  to mov buffer to the target.", 
+            "title": "Return"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#shellcode", 
+            "text": "After leaking address, we get another chance to write. Buffer is $esp (still on the stack).", 
+            "title": "Shellcode"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#target_1", 
+            "text": "I found that return address on the stack is  0x%%%%%%T0 \n- % from the address leaked in advance\n- T is a random number from 0 to f  Therefore, just put  0x%%%%%%T4  at return address. Then write shellcode after it.", 
+            "title": "Target"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/Start/#which-number-is-t", 
+            "text": "There are 16 possible numbers, so just  guess  !!!  You will get shell if you are fortunate enough. OwO", 
+            "title": "Which number is T ?"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/", 
+            "text": "hacknote\n\n\n\n\nChallenge Link: \nhacknote\n\n\nCategory: pwn\n\n\nWriteup: \nhacknote\n\n\n\n\nA good Hacker should always take good notes!\n\n\nnc chall.pwnable.tw 10102\n\n\nhacknote\n\n\nlibc.so\n\n\nObservation\n\n\nThis challenge is a Hacknote. There are 4 features (actually 3) - \nAdd, Delete, and Print\n.\n\n\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :1\nNote size :20\nContent :abcd \nSuccess !\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :3\nIndex :0\nabcd\n\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :2\nIndex :0\nSuccess\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :4\n\n\n\n\nI wrote another challenge in \ncsie.ctf.tw\n also called \"hacknote\" before, and both of these look similar.\n\n\nIn hacknote (csie), this program \nmalloc\n when add and \nfree\n when delete. However, \nit didn't set the pointer to \nNULL\n \n. Therefore, we can use add to write something, and use print to run.\n\n\nWhat do I mean ? Let's try !\n\n\nExperiment\n\n\nAdd two notes\n\n\nI add two notes with size 32 and contents are \"aaaa\" and \"bbbb\".\n\n\nHere is the value on the heap.\n\n\n0x804b000:  0x00000000  0x00000011    0x0804862b    0x0804b018\n0x804b010:  0x00000000  0x00000029    0x61616161    0x0000000a  \n======= note \naaaa\n\n0x804b020:  0x00000000  0x00000000    0x00000000    0x00000000\n                        -----------------------------\n0x804b030:  0x00000000  0x00000000  | 0x00000000    0x00000011\n            -------------------------------------\n0x804b040:  0x0804862b  0x0804b050    0x00000000    0x00000029\n0x804b050:  0x62626262  0x0000000a    0x00000000    0x00000000  \n======= note \nbbbb\n\n0x804b060:  0x00000000  0x00000000    0x00000000    0x00000000\n\n\n\n\nLet's focus on note \"aaaa\".\n\n\n           ------------------------------------------------------\n0x804b000: | 0x00000000 0x00000011  0x0804862b  0x0804b018  | \n======= struct note\n       ---------------------------------------------|--------\n                            |\n                        -------------\n                        |\n           ---------------------------------v--------------------\n0x804b010: | 0x00000000 0x00000029  0x61616161  0x0000000a  |\n0x804b020: | 0x00000000 0x00000000  0x00000000  0x00000000  | \n======= content\n0x804b030: | 0x00000000 0x00000000              |\n       ------------------------------------------------------\n\n\n\n\nThe first 8 bytes of each blocks are headers of  heap.\n\n\n\n\n\n\nstruct note is 0x10\n\n\n\n\n\n\n0x0804862b\nis print function\n\n\n\n\n\n\n 804862b:       55                      push   ebp\n 804862c:       89 e5                   mov    ebp,esp\n 804862e:       83 ec 08                sub    esp,0x8\n 8048631:       8b 45 08                mov    eax,DWORD PTR [ebp+0x8]\n 8048634:       8b 40 04                mov    eax,DWORD PTR [eax+0x4]\n 8048637:       83 ec 0c                sub    esp,0xc\n 804863a:       50                      push   eax\n 804863b:       e8 90 fe ff ff          call   80484d0 \nputs@plt\n\n 8048640:       83 c4 10                add    esp,0x10\n 8048643:       90                      nop\n 8048644:       c9                      leave  \n 8048645:       c3                      ret\n\n\n\n\nDelete\n\n\nI delete note \"aaaa\" (index 0) first, then I delete note \"bbbb\" (index 1).\n\n\nHere is the fastbin in heap.\n\n\n(0x10)     fastbin[0]: 0x804b038 --\n 0x804b000 --\n 0x0\n(0x18)     fastbin[1]: 0x0\n(0x20)     fastbin[2]: 0x0\n(0x28)     fastbin[3]: 0x804b048 --\n 0x804b010 --\n 0x0\n(0x30)     fastbin[4]: 0x0\n(0x38)     fastbin[5]: 0x0\n(0x40)     fastbin[6]: 0x0\n                  top: 0x804b070 (size : 0x20f90) \n       last_remainder: 0x0 (size : 0x0) \n            unsortbin: 0x0\n\n\n\n\nReallocate\n\n\nI add a new note with size \n0x8\n (0x8 + header = 0x10). Note 2 is allocated to 0x804b038, and it's content is 0x804b000 (original note 0).\n\n\n          ---------------------------------------------------------------\n0x804b000:    | 0x00000000      0x00000011      0x61616161      0x0804b00a  | \n== content\n          ---------------------------------------------------------------\n0x804b010:      0x00000000      0x00000029      0x00000000      0x0000000a\n0x804b020:      0x00000000      0x00000000      0x00000000      0x00000000\n                         --------------------------------\n0x804b030:      0x00000000      0x00000000   |  0x00000000      0x00000011  |\n          --------------------------------                  | \n== struct\n0x804b040:    | 0x0804862b      0x0804b008                  |\n          ---------------------------------------------------------------\n\n\n\n\nSolution\n\n\nAccroding to the experiment above, we can exploit it by reusing note.\n\n\nLeak libc\n\n\nFirst, we should leak the base of libc in order to using system().\n\n\nI choose \nputs_got = 0x804a024\nto leak.\n\n\nBecause of the size of struct is 0x10, we can only use only 0x8 as content size (0x8 + header = 0x10). Thus, I put \nprintNote function\n and \nputs_got\nin content to leak base.\n\n\nAfter adding note 2, note 0 is like this:\n\n\nstruct\n \nnote\n \n{\n\n    \nprintNote\n();\n        \n// 0x0804862b\n\n    \nputs_got\n;\n       \n// 0x804a024\n\n\n}\n\n\n\n\n\nWhen we print note 0, it will call printNote() then print puts_got.\n\n\nSystem()\n\n\nBefore printing note, this program send address of note as parameter to function.\n\n\n\n\n                        -----------------\n0x804b000:      0x00000000      0x00000011  |   0x0804862b  |    0x0804b018\n                        -----------------\n0x804b010:      0x00000000      0x00000029      0x61616161      0x0000000a\n\n\n\n\nWhat if this function is system() ?? Value from \n0x804b008\nwould be considered as string.\n\n\nTherefore, we can put something like \n;sh\n in content. Because string before \n;\n can not be executed, we have to add a \n;\n to split it. \n\n\nAfter printing (system), a shell will prompt !!", 
+            "title": "hacknote"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#hacknote", 
+            "text": "Challenge Link:  hacknote  Category: pwn  Writeup:  hacknote   A good Hacker should always take good notes!  nc chall.pwnable.tw 10102  hacknote  libc.so", 
+            "title": "hacknote"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#observation", 
+            "text": "This challenge is a Hacknote. There are 4 features (actually 3) -  Add, Delete, and Print .  ----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :1\nNote size :20\nContent :abcd \nSuccess !\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :3\nIndex :0\nabcd\n\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :2\nIndex :0\nSuccess\n----------------------\n       HackNote       \n----------------------\n 1. Add note          \n 2. Delete note       \n 3. Print note        \n 4. Exit              \n----------------------\nYour choice :4  I wrote another challenge in  csie.ctf.tw  also called \"hacknote\" before, and both of these look similar.  In hacknote (csie), this program  malloc  when add and  free  when delete. However,  it didn't set the pointer to  NULL   . Therefore, we can use add to write something, and use print to run.  What do I mean ? Let's try !", 
+            "title": "Observation"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#experiment", 
+            "text": "", 
+            "title": "Experiment"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#add-two-notes", 
+            "text": "I add two notes with size 32 and contents are \"aaaa\" and \"bbbb\".  Here is the value on the heap.  0x804b000:  0x00000000  0x00000011    0x0804862b    0x0804b018\n0x804b010:  0x00000000  0x00000029    0x61616161    0x0000000a   ======= note  aaaa \n0x804b020:  0x00000000  0x00000000    0x00000000    0x00000000\n                        -----------------------------\n0x804b030:  0x00000000  0x00000000  | 0x00000000    0x00000011\n            -------------------------------------\n0x804b040:  0x0804862b  0x0804b050    0x00000000    0x00000029\n0x804b050:  0x62626262  0x0000000a    0x00000000    0x00000000   ======= note  bbbb \n0x804b060:  0x00000000  0x00000000    0x00000000    0x00000000  Let's focus on note \"aaaa\".             ------------------------------------------------------\n0x804b000: | 0x00000000 0x00000011  0x0804862b  0x0804b018  |  ======= struct note\n       ---------------------------------------------|--------\n                            |\n                        -------------\n                        |\n           ---------------------------------v--------------------\n0x804b010: | 0x00000000 0x00000029  0x61616161  0x0000000a  |\n0x804b020: | 0x00000000 0x00000000  0x00000000  0x00000000  |  ======= content\n0x804b030: | 0x00000000 0x00000000              |\n       ------------------------------------------------------  The first 8 bytes of each blocks are headers of  heap.    struct note is 0x10    0x0804862b is print function     804862b:       55                      push   ebp\n 804862c:       89 e5                   mov    ebp,esp\n 804862e:       83 ec 08                sub    esp,0x8\n 8048631:       8b 45 08                mov    eax,DWORD PTR [ebp+0x8]\n 8048634:       8b 40 04                mov    eax,DWORD PTR [eax+0x4]\n 8048637:       83 ec 0c                sub    esp,0xc\n 804863a:       50                      push   eax\n 804863b:       e8 90 fe ff ff          call   80484d0  puts@plt \n 8048640:       83 c4 10                add    esp,0x10\n 8048643:       90                      nop\n 8048644:       c9                      leave  \n 8048645:       c3                      ret", 
+            "title": "Add two notes"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#delete", 
+            "text": "I delete note \"aaaa\" (index 0) first, then I delete note \"bbbb\" (index 1).  Here is the fastbin in heap.  (0x10)     fastbin[0]: 0x804b038 --  0x804b000 --  0x0\n(0x18)     fastbin[1]: 0x0\n(0x20)     fastbin[2]: 0x0\n(0x28)     fastbin[3]: 0x804b048 --  0x804b010 --  0x0\n(0x30)     fastbin[4]: 0x0\n(0x38)     fastbin[5]: 0x0\n(0x40)     fastbin[6]: 0x0\n                  top: 0x804b070 (size : 0x20f90) \n       last_remainder: 0x0 (size : 0x0) \n            unsortbin: 0x0", 
+            "title": "Delete"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#reallocate", 
+            "text": "I add a new note with size  0x8  (0x8 + header = 0x10). Note 2 is allocated to 0x804b038, and it's content is 0x804b000 (original note 0).            ---------------------------------------------------------------\n0x804b000:    | 0x00000000      0x00000011      0x61616161      0x0804b00a  |  == content\n          ---------------------------------------------------------------\n0x804b010:      0x00000000      0x00000029      0x00000000      0x0000000a\n0x804b020:      0x00000000      0x00000000      0x00000000      0x00000000\n                         --------------------------------\n0x804b030:      0x00000000      0x00000000   |  0x00000000      0x00000011  |\n          --------------------------------                  |  == struct\n0x804b040:    | 0x0804862b      0x0804b008                  |\n          ---------------------------------------------------------------", 
+            "title": "Reallocate"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#solution", 
+            "text": "Accroding to the experiment above, we can exploit it by reusing note.", 
+            "title": "Solution"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#leak-libc", 
+            "text": "First, we should leak the base of libc in order to using system().  I choose  puts_got = 0x804a024 to leak.  Because of the size of struct is 0x10, we can only use only 0x8 as content size (0x8 + header = 0x10). Thus, I put  printNote function  and  puts_got in content to leak base.  After adding note 2, note 0 is like this:  struct   note   { \n     printNote ();          // 0x0804862b \n     puts_got ;         // 0x804a024  }   When we print note 0, it will call printNote() then print puts_got.", 
+            "title": "Leak libc"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/hacknote/#system", 
+            "text": "Before printing note, this program send address of note as parameter to function.                           -----------------\n0x804b000:      0x00000000      0x00000011  |   0x0804862b  |    0x0804b018\n                        -----------------\n0x804b010:      0x00000000      0x00000029      0x61616161      0x0000000a  What if this function is system() ?? Value from  0x804b008 would be considered as string.  Therefore, we can put something like  ;sh  in content. Because string before  ;  can not be executed, we have to add a  ;  to split it.   After printing (system), a shell will prompt !!", 
+            "title": "System()"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/", 
+            "text": "dubblesort\n\n\n\n\nChallenge link: \ndubblesort\n\n\nCategory: pwn\n\n\nWriteup: \ndubblesort\n\n\n\n\nSort the memory!\n\n\nnc chall.pwnable.tw 10101\n\n\ndubblesort\n\n\nlibc.so\n\n\nObservation\n\n\n\u4e00\u958b\u59cb\u7a0b\u5f0f\u5148\u554f\u4e86\n\u540d\u5b57\n\uff0c\u63a5\u8457\u554f\u8981\n\u6392\u5217\u5e7e\u500b\u6578\u5b57\n \uff0c\u6700\u5f8c\u4f9d\u5e8f\u8f38\u5165\n\u5404\u500b\u6578\u5b57\n\u5f8c\u6703\u6392\u5217\u5b8c\u8f38\u51fa\u7d50\u679c\n\n\n\u770b\u5230\u9019\u984c\u6642\uff0c\u6211\u60f3\u5230\u4e4b\u524d\u5728 \ncsie.ctf.tw\n \u6709\u5beb\u904e\u4e00\u984c bubblesort \uff0c\u90a3\u984c\u662f\u900f\u904e\u6392\u5217\u7684\u6578\u5b57\u6c92\u6709\u9650\u5236\u6578\u91cf\u4f86\u84cb\u5230 return address\uff0c\u6216\u8a31\u9019\u984c\u6709\u985e\u4f3c\u7684\u6f0f\u6d1e\n\n\n$ ./dubblesort\nWhat your name :a\nHello a\n,How many numbers \ndo\n you what to sort :3\nEnter the \n0\n number : \n0\n\nEnter the \n1\n number : \n1\n\nEnter the \n2\n number : \n2\n\nProcessing......\nResult :\n\n0\n \n1\n \n2\n\n\n\n\n\nfile\n\n\n$ file dubblesort\ndubblesort: ELF \n32\n-bit LSB shared object, Intel \n80386\n, version \n1\n \n(\nSYSV\n)\n, dynamically linked, interpreter /lib/ld-linux.so.2, \nfor\n GNU/Linux \n2\n.6.24, BuildID\n[\nsha1\n]=\n12a217baf7cbdf2bb5c344ff14adcf7703672fb1, stripped\n\n\n\n\nchecksec\n\n\n\u4fdd\u8b77\u5168\u958b\n\n\ngdb-peda$ checksec\nCANARY    : ENABLED\nFORTIFY   : ENABLED\nNX        : ENABLED\nPIE       : ENABLED\nRELRO     : FULL\n\n\n\n\ninput\n\n\n\u540d\u5b57\u662f\u4f7f\u7528 \nread()\n \u4f86\u8b80\u53d6\uff0c\u8b80\u53d6\u7684\u9577\u5ea6\u662f 0x40\n\n\n   0x56555a11 \nmain+78\n:    mov    DWORD PTR \n[\nesp\n]\n,0x0\n\n=\n 0x56555a18 \nmain+85\n:    call   0x56555630 \nread@plt\n\n   0x56555a1d \nmain+90\n:    mov    DWORD PTR \n[\nesp+0x8\n]\n,esi\nGuessed arguments:\narg\n[\n0\n]\n: 0x0\narg\n[\n1\n]\n: 0xffffd72c --\n 0xff17\narg\n[\n2\n]\n: 0x40 \n(\n@\n)\n\n\n\n\n\n\u8981\u6392\u5217\u7684\u6578\u91cf\u662f\u4f7f\u7528 \nscanf()\n \uff0c\u4e14\u53c3\u6578\u662f \n%u\n \u4e5f\u5c31\u662f unsigned int\n\n\n   0x56555a45 \nmain+130\n:   mov    DWORD PTR \n[\nesp\n]\n,eax\n\n=\n 0x56555a48 \nmain+133\n:   call   0x56555700 \n__isoc99_scanf@plt\n\n   0x56555a4d \nmain+138\n:   mov    eax,DWORD PTR \n[\nesp+0x18\n]\n\nGuessed arguments:\narg\n[\n0\n]\n: 0x56555bfa --\n 0x45007525 \n(\n%u\n)\n\narg\n[\n1\n]\n: 0xffffd708 --\n 0xe0\n\n\n\n\n\u63a5\u8457\u6578\u5b57\u7684\u90e8\u5206\u4e00\u6a23\u662f\u4f7f\u7528 \nscanf()\n \u52a0\u4e0a \n%u\n \n\n\n   0x56555a92 \nmain+207\n:   mov    DWORD PTR \n[\nesp\n]\n,eax\n\n=\n 0x56555a95 \nmain+210\n:   call   0x56555700 \n__isoc99_scanf@plt\n\n   0x56555a9a \nmain+215\n:   add    esi,0x1\nGuessed arguments:\narg\n[\n0\n]\n: 0x56555bfa --\n 0x45007525 \n(\n%u\n)\n\narg\n[\n1\n]\n: 0xffffd70c --\n 0xf7f37f0a \n(\nmov    edx,DWORD PTR \n[\nesp+0x18\n])\n\n\n\n\n\nsort\n\n\nsort \u7684\u53c3\u6578\u662f \u8981\u6392\u5217\u7684\u6578\u91cf \u4ee5\u53ca \u7b2c\u4e00\u500b\u6578\u5b57\u5728 stack \u4e0a\u7684\u4f4d\u5740\uff0c\u6392\u5217\u7684\u65b9\u5f0f\u770b\u8d77\u4f86\u6c92\u4ec0\u9ebc\u554f\u984c\n\n\n   0x56555ab0 \nmain+237\n:   mov    DWORD PTR \n[\nesp\n]\n,eax\n\n=\n 0x56555ab3 \nmain+240\n:   call   0x56555931\n   0x56555ab8 \nmain+245\n:   lea    eax,\n[\nebx-0x138c\n]\n\nGuessed arguments:\narg\n[\n0\n]\n: 0xffffd70c --\n 0x0\narg\n[\n1\n]\n: 0x3\n----------------------- stack -----------------------\n\n0028\n|\n 0xffffd70c --\n 0x0        \n# num 0\n\n\n0032\n|\n 0xffffd710 --\n 0x1        \n# num 1\n\n\n0036\n|\n 0xffffd714 --\n 0x2        \n# num 2\n\n\n\n\n\nname\n\n\n\u5728\u6e2c\u8a66 name \u7684\u6642\u5019\uff0c\u767c\u73fe\u6709\u6642\u5019\u6703\u8f38\u51fa\u4e00\u4e9b\u4e0d\u53ef\u8996\u5b57\u5143\n\n\n./dubblesort\nWhat your name :aaaa\nHello aaaa\ny\ufffd\ufffd/,How many numbers \ndo\n you what to sort :\n\n\n\n\n\u7d93\u904e\u89c0\u5bdf\u5f8c\u767c\u73fe\u61c9\u8a72\u662f\u56e0\u70ba name \u6c92\u6709\u5c07\u6240\u6709\u7a7a\u9593\u5148\u6b78\u96f6\uff0c\u6240\u4ee5\u8f38\u51fa\u6642\u624d\u6703\u9023\u540c\u5f8c\u9762\u7684\u820a\u8cc7\u6599\u4e00\u8d77\u8f38\u51fa\n\n\nstack canary\n\n\n\u56e0\u70ba\u6709\u958b canary \u7684\u95dc\u4fc2\uff0c\u5c31\u7b97\u6c92\u6709\u6aa2\u67e5\u6700\u591a\u53ef\u4ee5\u8f38\u5165\u5e7e\u500b\u6578\u5b57\uff0c\u518d\u8f38\u5165\u8d85\u904e\u6642\u4f9d\u7136\u6703\u5674\u932f\n\n\n*** stack smashing detected ***: ./dubblesort terminated\n\n\n\n\n\u5229\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u6e2c\u8a66\uff0c\u767c\u73fe\u6700\u591a\u53ea\u80fd\u8f38\u5165\u5230 24 \u500b\u6578\u5b57\uff0c\u5982\u679c\u5230\u7b2c 25 \u500b\u6578\u5b57\u7684\u8a71\uff0c\u5728\u6392\u5217\u6642\u5c31\u6703\u5674\u51fa\u4ee5\u4e0a\u7684\u932f\u8aa4\u8a0a\u606f\n\n\nSolution\n\n\n\u7e3d\u5171\u6709\u4e09\u500b\u6b65\u9a5f\u8981\u505a\n\n\n\n\nleak libc\n\n\nbypass canary\n\n\nret2libc\n\n\n\n\nLeak libc\n\n\n\u9019\u908a\u6211\u5229\u7528\u7684\u662f name\n\n\n\u56e0\u70ba name \u7684 buffer \u6c92\u6709\u5148\u6e05\u7a7a\u7684\u95dc\u4fc2\uff0c\u6240\u4ee5\u53ef\u4ee5 leak \u51fa\u5f8c\u9762\u7684\u6578\u503c\n\n\n0060\n|\n 0xffffd72c \n(\naaaa\\n\\331\\377\\377/\n)\n\n\n0064\n|\n 0xffffd730 --\n 0xffffd90a --\n 0xfb6d2200\n\n0068\n|\n 0xffffd734 --\n 0x2f \n(\n/\n)\n\n\n0072\n|\n 0xffffd738 --\n 0x8e\n\n0076\n|\n 0xffffd73c --\n 0x16\n\n0080\n|\n 0xffffd740 --\n 0x8000\n\n0084\n|\n 0xffffd744 --\n 0xf7fcb000 --\n 0x1b1db0\n\n0088\n|\n 0xffffd748 --\n 0xf7fc9244 --\n 0xf7e31020 \n(\ncall   0xf7f38b59\n)\n    \n==\n\n\n\n\n\n\u7531\u4e0a\u9762 stack \u5167\u5bb9\u53ef\u77e5\uff0c\u7b2c 8 \u500b\u5305\u542b\u4e00\u500b\u4f4d\u5740\uff0c\u53ef\u4ee5\u8a18\u9304\u4e0b\u6b64\u6642 libc base \u8207\u5176\u4e4b\u9593\u7684\u5dee\u503c\uff0c\u4e26\u5728\u771f\u6b63 leak \u51fa\u6b64\u503c\u6642\u6e1b\u6389\u5dee\u503c\uff0c\u5373\u53ef\u5f97\u5230 libc base\n\n\n0xf7fc9244 - \nlibc_base\n \n=\n x \n(\n\u56fa\u5b9a\u7684\n)\n\nleak_addr - \nx\n \n=\n libc_base\n\n\n\n\n\u53ea\u8981\u8f38\u5165 28 (4*7) \u500b\u5b57\u5143\u4f5c\u70ba payload \uff0c\u5c31\u53ef\u4ee5\u5370\u51fa\u9019\u500b\u4f4d\u5740\u7684\u503c\u4e86\n\n\n0060\n|\n 0xffffd72c \n(\na\n \nrepeats \n28\n times\n, \n\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0064\n|\n 0xffffd730 \n(\na\n \nrepeats \n24\n times\n, \n\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0068\n|\n 0xffffd734 \n(\na\n \nrepeats \n20\n times\n, \n\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0072\n|\n 0xffffd738 \n(\na\n \nrepeats \n16\n times\n, \n\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0076\n|\n 0xffffd73c \n(\na\n \nrepeats \n12\n times\n, \n\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0080\n|\n 0xffffd740 \n(\naaaaaaaa\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0084\n|\n 0xffffd744 \n(\naaaa\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001\n)\n\n\n0088\n|\n 0xffffd748 --\n 0xf7fc920a --\n 0x0\n\n\n\n\nbypass canary\n\n\n\u5728 observation \u6642\uff0c\u6709\u5229\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u627e\u5230 canary \u7684\u4f4d\u7f6e\u5728\u7b2c 25 \u500b\n\n\n\u6b64\u6642\u53ef\u4ee5\u5229\u7528\u8f38\u5165\u6642\u7684 \nscanf(\n%u\n)\n \uff0c\u4e00\u822c\u5728\u8f38\u5165\u6642\uff0c\u8981\u8f38\u5165 unsigned int \u624d\u6703\u88ab\u63a5\u53d7\uff0c\u4f46\u662f\u9019\u6a23\u6703\u84cb\u6389 canary \uff0c\u7d93\u904e\u641c\u5c0b\u5f8c\u624d\u77e5\u9053\uff0c\u539f\u4f86\u53ef\u4ee5\u8f38\u5165 '+'\uff0c\u6b64\u6642\u6703\u88ab\u7576\u4f5c\u6b63\u5e38\u8f38\u5165\uff0c\u4f46\u4fdd\u7559\u6b64\u4f4d\u7f6e\u539f\u59cb\u7684\u503c\uff0c\u76f4\u63a5\u8df3\u5230\u4e0b\u4e00\u500b\uff0c\u5982\u6b64\u4e00\u4f86\u5c31\u53ef\u76f4\u63a5\u7e5e\u904e canary \u4e86\n\n\nret2libc\n\n\n\u8981\u505a\u5230 ret2libc \u7684\u8a71\u9054\u6210\u5169\u500b\u689d\u4ef6\n\n\n\n\nlibc base\n\n\nreturn address\n\n\n\n\nlibc base \u5728\u5148\u524d\u5df2\u7d93\u900f\u904e name \u53d6\u5f97\u4e86\uff0c\u60f3\u8981\u63a7\u5236 return address \u7684\u8a71\uff0c\u53ef\u4ee5\u5229\u7528\u8f38\u5165\u6578\u5b57\u6642\u7684 buffer overflow\uff0c\u56e0\u70ba\u5df2\u7d93\u8df3\u904e canary \u4e86\uff0c\u6240\u4ee5\u53ef\u4ee5\u4e00\u76f4\u63a8\u5230 return \u7684\u4f4d\u7f6e\uff0c\u4e26\u9032\u800c\u63a7\u5236 return address\n\n\n\u9019\u908a\u6211\u4e00\u6a23\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u4f86\u505a\uff0c\u5982\u679c\u6709\u84cb\u5230 return address \u7684\u4f4d\u7f6e\u7684\u8a71\u6703\u51fa\u73fe\u4ee5\u4e0b\u8a0a\u606f\n\n\n[\n*\n]\n Process \n./dubblesort\n stopped with \nexit\n code -11 \n(\nSIGSEGV\n)\n \n(\npid \n2290\n)\n\n\n\n\n\n\u641c\u5c0b\u904e\u5f8c\u77e5\u9053 return address \u662f\u5728\u7b2c 33 \u500b\u4f4d\u7f6e\n\n\n24\n(\npayload\n)\n + canary + \n7\n + ret\n\n\n\n\n\u6700\u5f8c\u5c31\u662f\u4f7f\u7528 libc base \u627e\u5230 \nsystem\n \u4ee5\u53ca \n/bin/sh\n \u4e32\u63a5\u5728 return address \u7684\u4f4d\u7f6e\u5373\u53ef\n\n\nNote\n\n\npwntool libc\n\n\n\u56e0\u70ba\u6709\u7d66 libc \uff0c\u6240\u4ee5\u5728\u672c\u6a5f\u6e2c\u8a66\u6642\u6700\u597d\u662f\u639b\u4e0a libc \uff0c\u5426\u5247\u4f4d\u5740\u53ef\u80fd\u6703\u8ddf\u9060\u7aef\u4e0d\u540c\n\n\nr\n \n=\n \nprocess\n(\n./dubblesort\n,\n \nenv\n=\n{\nLD_PRELOAD\n:\n./libc_32.so.6\n})\n\n\n\n\n\nsort\n\n\n\u5728\u8f38\u5165 payload \u6642\uff0c\u56e0\u70ba\u8f38\u5165\u5b8c\u5f8c\u9084\u6703\u9032\u884c\u6392\u5e8f\uff0c\u6240\u4ee5\u8981\u78ba\u4fdd\u6392\u5e8f\u904e\u5f8c\u9806\u5e8f\u4f9d\u7136\u4e0d\u8b8a\n\n\n\u6211\u7684\u4f5c\u6cd5\u662f\u524d 24 \u500b\u5b57\u5c31\u76f4\u63a5\u8f38\u5165 0~23 \uff0ccanary \u7684\u90e8\u5206\u8f38\u5165 + (43)\uff0c\u63a5\u8457\u5f8c\u9762\u7684 7 \u500b\u5b57\u653e libc base\uff0c\u6700\u5f8c \nsystem\n \u53ca \n/bin/sh\n \u56e0\u70ba\u8981\u52a0\u4e0a libc base \uff0c\u6240\u4ee5\u4e00\u5b9a\u6bd4 libc base \u5927\n\n\nsystem\n\n\n\u5728\u547c\u53eb system \u6642\uff0cstack \u7b2c\u4e00\u500b\u4f4d\u7f6e\u662f\u7d50\u675f\u5f8c\u7684 return address\uff0c\u56e0\u70ba\u4e0d\u6703 return \u4e86\uff0c\u6240\u4ee5\u96a8\u4fbf\u586b\u5c31\u53ef\u4ee5\u4e86\uff0c\u63a5\u8457\u624d\u662f system \u7684\u7b2c\u4e00\u500b\u53c3\u6578 \n/bin/sh", 
+            "title": "dubblesort"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#dubblesort", 
+            "text": "Challenge link:  dubblesort  Category: pwn  Writeup:  dubblesort   Sort the memory!  nc chall.pwnable.tw 10101  dubblesort  libc.so", 
+            "title": "dubblesort"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#observation", 
+            "text": "\u4e00\u958b\u59cb\u7a0b\u5f0f\u5148\u554f\u4e86 \u540d\u5b57 \uff0c\u63a5\u8457\u554f\u8981 \u6392\u5217\u5e7e\u500b\u6578\u5b57  \uff0c\u6700\u5f8c\u4f9d\u5e8f\u8f38\u5165 \u5404\u500b\u6578\u5b57 \u5f8c\u6703\u6392\u5217\u5b8c\u8f38\u51fa\u7d50\u679c  \u770b\u5230\u9019\u984c\u6642\uff0c\u6211\u60f3\u5230\u4e4b\u524d\u5728  csie.ctf.tw  \u6709\u5beb\u904e\u4e00\u984c bubblesort \uff0c\u90a3\u984c\u662f\u900f\u904e\u6392\u5217\u7684\u6578\u5b57\u6c92\u6709\u9650\u5236\u6578\u91cf\u4f86\u84cb\u5230 return address\uff0c\u6216\u8a31\u9019\u984c\u6709\u985e\u4f3c\u7684\u6f0f\u6d1e  $ ./dubblesort\nWhat your name :a\nHello a\n,How many numbers  do  you what to sort :3\nEnter the  0  number :  0 \nEnter the  1  number :  1 \nEnter the  2  number :  2 \nProcessing......\nResult : 0   1   2", 
+            "title": "Observation"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#file", 
+            "text": "$ file dubblesort\ndubblesort: ELF  32 -bit LSB shared object, Intel  80386 , version  1   ( SYSV ) , dynamically linked, interpreter /lib/ld-linux.so.2,  for  GNU/Linux  2 .6.24, BuildID [ sha1 ]= 12a217baf7cbdf2bb5c344ff14adcf7703672fb1, stripped", 
+            "title": "file"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#checksec", 
+            "text": "\u4fdd\u8b77\u5168\u958b  gdb-peda$ checksec\nCANARY    : ENABLED\nFORTIFY   : ENABLED\nNX        : ENABLED\nPIE       : ENABLED\nRELRO     : FULL", 
+            "title": "checksec"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#input", 
+            "text": "\u540d\u5b57\u662f\u4f7f\u7528  read()  \u4f86\u8b80\u53d6\uff0c\u8b80\u53d6\u7684\u9577\u5ea6\u662f 0x40     0x56555a11  main+78 :    mov    DWORD PTR  [ esp ] ,0x0 =  0x56555a18  main+85 :    call   0x56555630  read@plt \n   0x56555a1d  main+90 :    mov    DWORD PTR  [ esp+0x8 ] ,esi\nGuessed arguments:\narg [ 0 ] : 0x0\narg [ 1 ] : 0xffffd72c --  0xff17\narg [ 2 ] : 0x40  ( @ )   \u8981\u6392\u5217\u7684\u6578\u91cf\u662f\u4f7f\u7528  scanf()  \uff0c\u4e14\u53c3\u6578\u662f  %u  \u4e5f\u5c31\u662f unsigned int     0x56555a45  main+130 :   mov    DWORD PTR  [ esp ] ,eax =  0x56555a48  main+133 :   call   0x56555700  __isoc99_scanf@plt \n   0x56555a4d  main+138 :   mov    eax,DWORD PTR  [ esp+0x18 ] \nGuessed arguments:\narg [ 0 ] : 0x56555bfa --  0x45007525  ( %u ) \narg [ 1 ] : 0xffffd708 --  0xe0  \u63a5\u8457\u6578\u5b57\u7684\u90e8\u5206\u4e00\u6a23\u662f\u4f7f\u7528  scanf()  \u52a0\u4e0a  %u       0x56555a92  main+207 :   mov    DWORD PTR  [ esp ] ,eax =  0x56555a95  main+210 :   call   0x56555700  __isoc99_scanf@plt \n   0x56555a9a  main+215 :   add    esi,0x1\nGuessed arguments:\narg [ 0 ] : 0x56555bfa --  0x45007525  ( %u ) \narg [ 1 ] : 0xffffd70c --  0xf7f37f0a  ( mov    edx,DWORD PTR  [ esp+0x18 ])", 
+            "title": "input"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#sort", 
+            "text": "sort \u7684\u53c3\u6578\u662f \u8981\u6392\u5217\u7684\u6578\u91cf \u4ee5\u53ca \u7b2c\u4e00\u500b\u6578\u5b57\u5728 stack \u4e0a\u7684\u4f4d\u5740\uff0c\u6392\u5217\u7684\u65b9\u5f0f\u770b\u8d77\u4f86\u6c92\u4ec0\u9ebc\u554f\u984c     0x56555ab0  main+237 :   mov    DWORD PTR  [ esp ] ,eax =  0x56555ab3  main+240 :   call   0x56555931\n   0x56555ab8  main+245 :   lea    eax, [ ebx-0x138c ] \nGuessed arguments:\narg [ 0 ] : 0xffffd70c --  0x0\narg [ 1 ] : 0x3\n----------------------- stack ----------------------- 0028 |  0xffffd70c --  0x0         # num 0  0032 |  0xffffd710 --  0x1         # num 1  0036 |  0xffffd714 --  0x2         # num 2", 
+            "title": "sort"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#name", 
+            "text": "\u5728\u6e2c\u8a66 name \u7684\u6642\u5019\uff0c\u767c\u73fe\u6709\u6642\u5019\u6703\u8f38\u51fa\u4e00\u4e9b\u4e0d\u53ef\u8996\u5b57\u5143  ./dubblesort\nWhat your name :aaaa\nHello aaaa\ny\ufffd\ufffd/,How many numbers  do  you what to sort :  \u7d93\u904e\u89c0\u5bdf\u5f8c\u767c\u73fe\u61c9\u8a72\u662f\u56e0\u70ba name \u6c92\u6709\u5c07\u6240\u6709\u7a7a\u9593\u5148\u6b78\u96f6\uff0c\u6240\u4ee5\u8f38\u51fa\u6642\u624d\u6703\u9023\u540c\u5f8c\u9762\u7684\u820a\u8cc7\u6599\u4e00\u8d77\u8f38\u51fa", 
+            "title": "name"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#stack-canary", 
+            "text": "\u56e0\u70ba\u6709\u958b canary \u7684\u95dc\u4fc2\uff0c\u5c31\u7b97\u6c92\u6709\u6aa2\u67e5\u6700\u591a\u53ef\u4ee5\u8f38\u5165\u5e7e\u500b\u6578\u5b57\uff0c\u518d\u8f38\u5165\u8d85\u904e\u6642\u4f9d\u7136\u6703\u5674\u932f  *** stack smashing detected ***: ./dubblesort terminated  \u5229\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u6e2c\u8a66\uff0c\u767c\u73fe\u6700\u591a\u53ea\u80fd\u8f38\u5165\u5230 24 \u500b\u6578\u5b57\uff0c\u5982\u679c\u5230\u7b2c 25 \u500b\u6578\u5b57\u7684\u8a71\uff0c\u5728\u6392\u5217\u6642\u5c31\u6703\u5674\u51fa\u4ee5\u4e0a\u7684\u932f\u8aa4\u8a0a\u606f", 
+            "title": "stack canary"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#solution", 
+            "text": "\u7e3d\u5171\u6709\u4e09\u500b\u6b65\u9a5f\u8981\u505a   leak libc  bypass canary  ret2libc", 
+            "title": "Solution"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#leak-libc", 
+            "text": "\u9019\u908a\u6211\u5229\u7528\u7684\u662f name  \u56e0\u70ba name \u7684 buffer \u6c92\u6709\u5148\u6e05\u7a7a\u7684\u95dc\u4fc2\uff0c\u6240\u4ee5\u53ef\u4ee5 leak \u51fa\u5f8c\u9762\u7684\u6578\u503c  0060 |  0xffffd72c  ( aaaa\\n\\331\\377\\377/ )  0064 |  0xffffd730 --  0xffffd90a --  0xfb6d2200 0068 |  0xffffd734 --  0x2f  ( / )  0072 |  0xffffd738 --  0x8e 0076 |  0xffffd73c --  0x16 0080 |  0xffffd740 --  0x8000 0084 |  0xffffd744 --  0xf7fcb000 --  0x1b1db0 0088 |  0xffffd748 --  0xf7fc9244 --  0xf7e31020  ( call   0xf7f38b59 )      ==   \u7531\u4e0a\u9762 stack \u5167\u5bb9\u53ef\u77e5\uff0c\u7b2c 8 \u500b\u5305\u542b\u4e00\u500b\u4f4d\u5740\uff0c\u53ef\u4ee5\u8a18\u9304\u4e0b\u6b64\u6642 libc base \u8207\u5176\u4e4b\u9593\u7684\u5dee\u503c\uff0c\u4e26\u5728\u771f\u6b63 leak \u51fa\u6b64\u503c\u6642\u6e1b\u6389\u5dee\u503c\uff0c\u5373\u53ef\u5f97\u5230 libc base  0xf7fc9244 -  libc_base   =  x  ( \u56fa\u5b9a\u7684 ) \nleak_addr -  x   =  libc_base  \u53ea\u8981\u8f38\u5165 28 (4*7) \u500b\u5b57\u5143\u4f5c\u70ba payload \uff0c\u5c31\u53ef\u4ee5\u5370\u51fa\u9019\u500b\u4f4d\u5740\u7684\u503c\u4e86  0060 |  0xffffd72c  ( a   repeats  28  times ,  \\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0064 |  0xffffd730  ( a   repeats  24  times ,  \\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0068 |  0xffffd734  ( a   repeats  20  times ,  \\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0072 |  0xffffd738  ( a   repeats  16  times ,  \\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0076 |  0xffffd73c  ( a   repeats  12  times ,  \\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0080 |  0xffffd740  ( aaaaaaaa\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0084 |  0xffffd744  ( aaaa\\n\\222\\374\\367\\001VUV\\251WUV\\240oUV\\001 )  0088 |  0xffffd748 --  0xf7fc920a --  0x0", 
+            "title": "Leak libc"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#bypass-canary", 
+            "text": "\u5728 observation \u6642\uff0c\u6709\u5229\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u627e\u5230 canary \u7684\u4f4d\u7f6e\u5728\u7b2c 25 \u500b  \u6b64\u6642\u53ef\u4ee5\u5229\u7528\u8f38\u5165\u6642\u7684  scanf( %u )  \uff0c\u4e00\u822c\u5728\u8f38\u5165\u6642\uff0c\u8981\u8f38\u5165 unsigned int \u624d\u6703\u88ab\u63a5\u53d7\uff0c\u4f46\u662f\u9019\u6a23\u6703\u84cb\u6389 canary \uff0c\u7d93\u904e\u641c\u5c0b\u5f8c\u624d\u77e5\u9053\uff0c\u539f\u4f86\u53ef\u4ee5\u8f38\u5165 '+'\uff0c\u6b64\u6642\u6703\u88ab\u7576\u4f5c\u6b63\u5e38\u8f38\u5165\uff0c\u4f46\u4fdd\u7559\u6b64\u4f4d\u7f6e\u539f\u59cb\u7684\u503c\uff0c\u76f4\u63a5\u8df3\u5230\u4e0b\u4e00\u500b\uff0c\u5982\u6b64\u4e00\u4f86\u5c31\u53ef\u76f4\u63a5\u7e5e\u904e canary \u4e86", 
+            "title": "bypass canary"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#ret2libc", 
+            "text": "\u8981\u505a\u5230 ret2libc \u7684\u8a71\u9054\u6210\u5169\u500b\u689d\u4ef6   libc base  return address   libc base \u5728\u5148\u524d\u5df2\u7d93\u900f\u904e name \u53d6\u5f97\u4e86\uff0c\u60f3\u8981\u63a7\u5236 return address \u7684\u8a71\uff0c\u53ef\u4ee5\u5229\u7528\u8f38\u5165\u6578\u5b57\u6642\u7684 buffer overflow\uff0c\u56e0\u70ba\u5df2\u7d93\u8df3\u904e canary \u4e86\uff0c\u6240\u4ee5\u53ef\u4ee5\u4e00\u76f4\u63a8\u5230 return \u7684\u4f4d\u7f6e\uff0c\u4e26\u9032\u800c\u63a7\u5236 return address  \u9019\u908a\u6211\u4e00\u6a23\u7528\u4e8c\u5206\u641c\u7684\u65b9\u5f0f\u4f86\u505a\uff0c\u5982\u679c\u6709\u84cb\u5230 return address \u7684\u4f4d\u7f6e\u7684\u8a71\u6703\u51fa\u73fe\u4ee5\u4e0b\u8a0a\u606f  [ * ]  Process  ./dubblesort  stopped with  exit  code -11  ( SIGSEGV )   ( pid  2290 )   \u641c\u5c0b\u904e\u5f8c\u77e5\u9053 return address \u662f\u5728\u7b2c 33 \u500b\u4f4d\u7f6e  24 ( payload )  + canary +  7  + ret  \u6700\u5f8c\u5c31\u662f\u4f7f\u7528 libc base \u627e\u5230  system  \u4ee5\u53ca  /bin/sh  \u4e32\u63a5\u5728 return address \u7684\u4f4d\u7f6e\u5373\u53ef", 
+            "title": "ret2libc"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#note", 
+            "text": "", 
+            "title": "Note"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#pwntool-libc", 
+            "text": "\u56e0\u70ba\u6709\u7d66 libc \uff0c\u6240\u4ee5\u5728\u672c\u6a5f\u6e2c\u8a66\u6642\u6700\u597d\u662f\u639b\u4e0a libc \uff0c\u5426\u5247\u4f4d\u5740\u53ef\u80fd\u6703\u8ddf\u9060\u7aef\u4e0d\u540c  r   =   process ( ./dubblesort ,   env = { LD_PRELOAD : ./libc_32.so.6 })", 
+            "title": "pwntool libc"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#sort_1", 
+            "text": "\u5728\u8f38\u5165 payload \u6642\uff0c\u56e0\u70ba\u8f38\u5165\u5b8c\u5f8c\u9084\u6703\u9032\u884c\u6392\u5e8f\uff0c\u6240\u4ee5\u8981\u78ba\u4fdd\u6392\u5e8f\u904e\u5f8c\u9806\u5e8f\u4f9d\u7136\u4e0d\u8b8a  \u6211\u7684\u4f5c\u6cd5\u662f\u524d 24 \u500b\u5b57\u5c31\u76f4\u63a5\u8f38\u5165 0~23 \uff0ccanary \u7684\u90e8\u5206\u8f38\u5165 + (43)\uff0c\u63a5\u8457\u5f8c\u9762\u7684 7 \u500b\u5b57\u653e libc base\uff0c\u6700\u5f8c  system  \u53ca  /bin/sh  \u56e0\u70ba\u8981\u52a0\u4e0a libc base \uff0c\u6240\u4ee5\u4e00\u5b9a\u6bd4 libc base \u5927", 
+            "title": "sort"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/dubblesort/#system", 
+            "text": "\u5728\u547c\u53eb system \u6642\uff0cstack \u7b2c\u4e00\u500b\u4f4d\u7f6e\u662f\u7d50\u675f\u5f8c\u7684 return address\uff0c\u56e0\u70ba\u4e0d\u6703 return \u4e86\uff0c\u6240\u4ee5\u96a8\u4fbf\u586b\u5c31\u53ef\u4ee5\u4e86\uff0c\u63a5\u8457\u624d\u662f system \u7684\u7b2c\u4e00\u500b\u53c3\u6578  /bin/sh", 
+            "title": "system"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/", 
+            "text": "criticalheap\n\n\n\n\nChallenge link: \ncriticalheap\n\n\nCategory: pwn\n\n\nWriteup: \ncriticalheap\n\n\n\n\nThere are some secrets . Try to capture \n/home/critical_heap++/flag\n.\n\n\nWe recommend you to use the provided docker environment to develop your exploit:\n\n\nnc chall.pwnable.tw 10500\n\n\ncritical_heap.tar.gz\n\n\nObservation\n\n\n\u9019\u984c\u6709\u5f88\u591a\u500b\u9078\u9805\u53ef\u4ee5\u4f7f\u7528\uff0c\u4ee5\u4e0b\u8b1b\u53ef\u80fd\u6703\u7528\u5230\u7684\u90e8\u5206\n\n\nstruct\n\n\n\u9019\u984c\u6709\u4e09\u500b struct (normal, time, system) \u5728\u4e00\u500b union\uff0c\u4e00\u958b\u59cb\u5c31\u5148\u5728 .bss \u6bb5\u5ba3\u544a\u9577\u5ea6 10 \u7684 struct \u9663\u5217\uff0c\u5176\u4e2d\u67d0\u4e9b\u8b8a\u6578 (name, value...) \u662f\u5b58\u5b57\u4e32\u7684\u6307\u6a19\n\n\nnormal\n\n\n00000000 name\n...\n00000018 content\n...\n\n\n\n\nsystem\n\n\n00000000 name\n...\n00000020 value\n...\n\n\n\n\ncreate\n\n\nname\n\n\nname \u7684\u90e8\u5206\u662f\u5148 read \u9032\u4f86\u4ee5\u5f8c\uff0c\u7528 strdup \u653e\u5230 struct \u4e0a\u7684\uff0c\u6240\u4ee5\u4e5f\u662f\u5b58\u5728 heap \u4e0a\n\n\n\n\nnormal\n\n\nnormal \u7684\u90e8\u5206\u9700\u8981\u8f38\u5165 content\uff0c\u5b83\u662f\u76f4\u63a5 read \u5230 rax + 0x18 (struct \u4e0a\u7684 0x18) \u7684\u4f4d\u7f6e\uff0c\u6c92\u6709\u5728\u5f8c\u9762\u88dc\u4e0a \n0x00\n\n\n\n\ntime\n\n\ntime \u6703\u7528 localtime \u62ff\u53d6\u73fe\u5728\u7684\u6642\u9593\u4ee5\u5f8c\uff0c\u8655\u7406\u5b8c\u5b58\u9032 struct\n\n\n\n\nlocaltime \u5148\u4f7f\u7528 getenv \u6293\u53d6\u74b0\u5883\u8b8a\u6578 TZ \u7684\u503c\uff0c\u63a5\u8457\u8b80\u51fa TZ \u6240\u6307\u7684\u6a94\u6848\uff0c\u4e26\u5c07\u5167\u5bb9\u5b58\u5728 heap \u4e0a\n\n\n\n\n\n\nplay_system\n\n\nSet the name for the heap\n\n\n\u9019\u500b\u529f\u80fd\u5176\u5be6\u5c31\u662f setenv\n\n\n\n\nUnset the name in the heap\n\n\n\u9019\u500b\u529f\u80fd\u662f unsetenv\n\n\n\n\nGet the value of name\n\n\n\u9019\u500b\u529f\u80fd\u6bd4\u8f03\u7279\u5225\uff0c\u6703\u5148\u7528 getenv \u6293\u8f38\u5165\u7684 name\uff0c\u63a5\u8457\u5c07\u6293\u5230\u7684\u6307\u6a19 (\u6307\u5411 heap \u4e0a\u5b58 value \u8655) \u5b58\u5728 rax + 0x20 (struct \u4e0a 0x20 \u7684\u4f4d\u7f6e)\n\n\n\n\nplay_normal\n\n\nShow the content of heap\n\n\n\u9019\u500b\u529f\u80fd\u6709 format string \u7684\u6f0f\u6d1e\uff0c\u800c\u4e14\u662f\u4f7f\u7528 printf_chk\n\n\n\n\ndelete\n\n\ndelete \u5be6\u969b\u4e0a\u53ea\u6709\u628a\u6307\u5b9a\u7684 struct \u6a19\u6210 0 \u800c\u5df2\uff0c\u4e0a\u9762\u7684\u8cc7\u8a0a\u4e26\u6c92\u6709\u6e05\u7a7a\n\n\n\n\nConclusion\n\n\n\n\ncreate_normal \u8b80\u53d6 content \u6642\u6c92\u6709\u7d50\u5c3e\n\n\nplay_normal \u6709 format string \u7684\u6f0f\u6d1e\n\n\nsetenv \u53ef\u4ee5\u6539\u52d5 TZ \u7684\u503c\n\n\ndelete \u6c92\u6709\u6e05\u7a7a\n\n\n\n\nSolution\n\n\n\u89e3\u6cd5\u6b65\u9a5f\u5982\u4e0b\uff1a\n\n\n\n\nleak heap base \u4f4d\u7f6e\n\n\n\u5229\u7528 setenv \u6539\u52d5 TZ \u4ee5\u5f8c\uff0c\u7528 localtime \u5c07 flag \u8b80\u5230 heap \u4e0a\n\n\n\u5229\u7528 format string \u5370\u51fa flag\n\n\n\n\nleak heap base\n\n\n\u9019\u500b\u90e8\u5206\u8981\u5229\u7528 \"delete \u6c92\u6709\u6e05\u7a7a\" \u7684\u6f0f\u6d1e\n\n\n\u5148\u5275 system\uff0c\u63a5\u8457\u5230 play \u96a8\u4fbf\u5275\u4e00\u500b\u74b0\u5883\u8b8a\u6578\uff0c\u518d\u4f7f\u7528 play_system_get_value \u4f86\u5c07\u74b0\u5883\u8b8a\u6578\u7684\u4f4d\u5740\u653e\u5230 struct \u4e0a\uff0c\u9019\u662f\u70ba\u4e86\u53d6\u5f97\u4e00\u6bb5 heap address\n\n\n0x000 name\n0x020 value  (heap address)\n\n\n\n\n\u63a5\u8457 delete \u6389\uff0c\u7136\u5f8c\u5275\u4e00\u500b normal \u7684 struct\uff0c\u6b64\u6642 normal struct \u6703\u84cb\u5728 system struct \u539f\u672c\u7684\u4f4d\u7f6e\u4e0a\n\n\n\u56e0\u70ba content \u5b58\u5728 0x18\uff0c\u8207\u539f\u672c\u7684 value \u5dee 0x8\uff0c\u8981\u8f38\u5165 8 \u500b\u5b57\u5143\u624d\u80fd\u78b0\u5230 value \u7684\u4f4d\u7f6e\n\n\n\n\n\u4e0d\u8981\u8f38\u5165 \\n \u4e0d\u7136\u8f38\u51fa\u6703\u88ab\u622a\u65b7\n\n\n\n\n0x000 name\n0x018 content (\nAAAAAAAA\n)\n0x020 value  (heap address)\n\n\n\n\n\u6700\u5f8c\u5c31\u4f7f\u7528 show \u628a struct \u5370\u51fa\u4f86\u5c31\u53ef\u4ee5\u5f97\u5230 heap address \u4e86\n\n\n\u56e0\u70ba\u5728 heap \u4e0a\u76f8\u5c0d\u4f4d\u7f6e\u4e0d\u8b8a\uff0c\u7528 gdb \u770b\u4e00\u4e0b\u8ddf base \u5dee\u591a\u9060\uff0cleak \u51fa\u4f86\u5f8c\u6e1b\u6389\u5c31\u662f heap base \u4e86\n\n\nTZ\n\n\n\u9019\u500b\u90e8\u5206\u5c31\u5275\u4e00\u500b system \u7136\u5f8c\u7528 setenv \u628a TZ \u8a2d\u6210 \n/home/critical_heap++/flag\n\n\n\u63a5\u8457\u5275\u4e00\u500b time struct\uff0c\u5c31\u6703\u5728 localtime \u5c07 flag \u8b80\u53d6\u5230 heap \u4e0a\u4e86\uff0c\u7136\u5f8c\u7528 gdb \u770b\u4e00\u4e0b offset \u642d\u914d heap base \u5c31\u53ef\u4ee5\u77e5\u9053 flag address \u4e86\n\n\n\n\nformat string\n\n\n\u5229\u7528 format string \u642d\u914d %s \u53ef\u4ee5 leak \u4efb\u610f\u4f4d\u5740\u7684\u7279\u6027\u4f86 leak flag address\n\n\n\u53e6\u5916\uff0c\u56e0\u70ba\u662f\u4f7f\u7528 printf_chk \u7684\u95dc\u4fc2\uff0c\u4e0d\u80fd\u4f7f\u7528 \n$\n \u8981\u81ea\u5df1\u7528 %c \u4f86\u8df3\u5230\u6307\u5b9a\u5340\u57df\n\n\n\n\nNote\n\n\npeda in docker\n\n\n\u9019\u6b21\u6709\u7d66\u4e00\u500b docker \u7684\u74b0\u5883\uff0c\u8981\u5728\u88e1\u9762\u4f7f\u7528 gdb-peda \u7684\u8a71\uff0c\u8981\u6539\u52d5\u4ee5\u4e0b\u8a2d\u5b9a\n\n\nDockerfile\n\n\nRUN\n apt-get install gdb git -y\n\nWORKDIR\n /root\n\n\nRUN\n git clone https://github.com/scwuaptx/Pwngdb.git \n;\n cp ~/Pwngdb/.gdbinit ~/\n\nRUN\n git clone https://github.com/scwuaptx/peda.git ~/peda \n;\n \necho\n \nsource ~/peda/peda.py\n \n ~/.gdbinit \n;\n cp ~/peda/.inputrc ~/\n\n\n\n\ndocker-compose.yml\n\n\ncritical_heap\n:\n\n    \ncap_add\n:\n\n        \n-\n \nSYS_PTRACE", 
+            "title": "criticalheap"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#criticalheap", 
+            "text": "Challenge link:  criticalheap  Category: pwn  Writeup:  criticalheap   There are some secrets . Try to capture  /home/critical_heap++/flag .  We recommend you to use the provided docker environment to develop your exploit:  nc chall.pwnable.tw 10500  critical_heap.tar.gz", 
+            "title": "criticalheap"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#observation", 
+            "text": "\u9019\u984c\u6709\u5f88\u591a\u500b\u9078\u9805\u53ef\u4ee5\u4f7f\u7528\uff0c\u4ee5\u4e0b\u8b1b\u53ef\u80fd\u6703\u7528\u5230\u7684\u90e8\u5206", 
+            "title": "Observation"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#struct", 
+            "text": "\u9019\u984c\u6709\u4e09\u500b struct (normal, time, system) \u5728\u4e00\u500b union\uff0c\u4e00\u958b\u59cb\u5c31\u5148\u5728 .bss \u6bb5\u5ba3\u544a\u9577\u5ea6 10 \u7684 struct \u9663\u5217\uff0c\u5176\u4e2d\u67d0\u4e9b\u8b8a\u6578 (name, value...) \u662f\u5b58\u5b57\u4e32\u7684\u6307\u6a19", 
+            "title": "struct"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#normal", 
+            "text": "00000000 name\n...\n00000018 content\n...", 
+            "title": "normal"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#system", 
+            "text": "00000000 name\n...\n00000020 value\n...", 
+            "title": "system"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#create", 
+            "text": "", 
+            "title": "create"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#name", 
+            "text": "name \u7684\u90e8\u5206\u662f\u5148 read \u9032\u4f86\u4ee5\u5f8c\uff0c\u7528 strdup \u653e\u5230 struct \u4e0a\u7684\uff0c\u6240\u4ee5\u4e5f\u662f\u5b58\u5728 heap \u4e0a", 
+            "title": "name"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#normal_1", 
+            "text": "normal \u7684\u90e8\u5206\u9700\u8981\u8f38\u5165 content\uff0c\u5b83\u662f\u76f4\u63a5 read \u5230 rax + 0x18 (struct \u4e0a\u7684 0x18) \u7684\u4f4d\u7f6e\uff0c\u6c92\u6709\u5728\u5f8c\u9762\u88dc\u4e0a  0x00", 
+            "title": "normal"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#time", 
+            "text": "time \u6703\u7528 localtime \u62ff\u53d6\u73fe\u5728\u7684\u6642\u9593\u4ee5\u5f8c\uff0c\u8655\u7406\u5b8c\u5b58\u9032 struct   localtime \u5148\u4f7f\u7528 getenv \u6293\u53d6\u74b0\u5883\u8b8a\u6578 TZ \u7684\u503c\uff0c\u63a5\u8457\u8b80\u51fa TZ \u6240\u6307\u7684\u6a94\u6848\uff0c\u4e26\u5c07\u5167\u5bb9\u5b58\u5728 heap \u4e0a", 
+            "title": "time"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#play_system", 
+            "text": "", 
+            "title": "play_system"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#set-the-name-for-the-heap", 
+            "text": "\u9019\u500b\u529f\u80fd\u5176\u5be6\u5c31\u662f setenv", 
+            "title": "Set the name for the heap"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#unset-the-name-in-the-heap", 
+            "text": "\u9019\u500b\u529f\u80fd\u662f unsetenv", 
+            "title": "Unset the name in the heap"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#get-the-value-of-name", 
+            "text": "\u9019\u500b\u529f\u80fd\u6bd4\u8f03\u7279\u5225\uff0c\u6703\u5148\u7528 getenv \u6293\u8f38\u5165\u7684 name\uff0c\u63a5\u8457\u5c07\u6293\u5230\u7684\u6307\u6a19 (\u6307\u5411 heap \u4e0a\u5b58 value \u8655) \u5b58\u5728 rax + 0x20 (struct \u4e0a 0x20 \u7684\u4f4d\u7f6e)", 
+            "title": "Get the value of name"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#play_normal", 
+            "text": "", 
+            "title": "play_normal"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#show-the-content-of-heap", 
+            "text": "\u9019\u500b\u529f\u80fd\u6709 format string \u7684\u6f0f\u6d1e\uff0c\u800c\u4e14\u662f\u4f7f\u7528 printf_chk", 
+            "title": "Show the content of heap"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#delete", 
+            "text": "delete \u5be6\u969b\u4e0a\u53ea\u6709\u628a\u6307\u5b9a\u7684 struct \u6a19\u6210 0 \u800c\u5df2\uff0c\u4e0a\u9762\u7684\u8cc7\u8a0a\u4e26\u6c92\u6709\u6e05\u7a7a", 
+            "title": "delete"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#conclusion", 
+            "text": "create_normal \u8b80\u53d6 content \u6642\u6c92\u6709\u7d50\u5c3e  play_normal \u6709 format string \u7684\u6f0f\u6d1e  setenv \u53ef\u4ee5\u6539\u52d5 TZ \u7684\u503c  delete \u6c92\u6709\u6e05\u7a7a", 
+            "title": "Conclusion"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#solution", 
+            "text": "\u89e3\u6cd5\u6b65\u9a5f\u5982\u4e0b\uff1a   leak heap base \u4f4d\u7f6e  \u5229\u7528 setenv \u6539\u52d5 TZ \u4ee5\u5f8c\uff0c\u7528 localtime \u5c07 flag \u8b80\u5230 heap \u4e0a  \u5229\u7528 format string \u5370\u51fa flag", 
+            "title": "Solution"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#leak-heap-base", 
+            "text": "\u9019\u500b\u90e8\u5206\u8981\u5229\u7528 \"delete \u6c92\u6709\u6e05\u7a7a\" \u7684\u6f0f\u6d1e  \u5148\u5275 system\uff0c\u63a5\u8457\u5230 play \u96a8\u4fbf\u5275\u4e00\u500b\u74b0\u5883\u8b8a\u6578\uff0c\u518d\u4f7f\u7528 play_system_get_value \u4f86\u5c07\u74b0\u5883\u8b8a\u6578\u7684\u4f4d\u5740\u653e\u5230 struct \u4e0a\uff0c\u9019\u662f\u70ba\u4e86\u53d6\u5f97\u4e00\u6bb5 heap address  0x000 name\n0x020 value  (heap address)  \u63a5\u8457 delete \u6389\uff0c\u7136\u5f8c\u5275\u4e00\u500b normal \u7684 struct\uff0c\u6b64\u6642 normal struct \u6703\u84cb\u5728 system struct \u539f\u672c\u7684\u4f4d\u7f6e\u4e0a  \u56e0\u70ba content \u5b58\u5728 0x18\uff0c\u8207\u539f\u672c\u7684 value \u5dee 0x8\uff0c\u8981\u8f38\u5165 8 \u500b\u5b57\u5143\u624d\u80fd\u78b0\u5230 value \u7684\u4f4d\u7f6e   \u4e0d\u8981\u8f38\u5165 \\n \u4e0d\u7136\u8f38\u51fa\u6703\u88ab\u622a\u65b7   0x000 name\n0x018 content ( AAAAAAAA )\n0x020 value  (heap address)  \u6700\u5f8c\u5c31\u4f7f\u7528 show \u628a struct \u5370\u51fa\u4f86\u5c31\u53ef\u4ee5\u5f97\u5230 heap address \u4e86  \u56e0\u70ba\u5728 heap \u4e0a\u76f8\u5c0d\u4f4d\u7f6e\u4e0d\u8b8a\uff0c\u7528 gdb \u770b\u4e00\u4e0b\u8ddf base \u5dee\u591a\u9060\uff0cleak \u51fa\u4f86\u5f8c\u6e1b\u6389\u5c31\u662f heap base \u4e86", 
+            "title": "leak heap base"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#tz", 
+            "text": "\u9019\u500b\u90e8\u5206\u5c31\u5275\u4e00\u500b system \u7136\u5f8c\u7528 setenv \u628a TZ \u8a2d\u6210  /home/critical_heap++/flag  \u63a5\u8457\u5275\u4e00\u500b time struct\uff0c\u5c31\u6703\u5728 localtime \u5c07 flag \u8b80\u53d6\u5230 heap \u4e0a\u4e86\uff0c\u7136\u5f8c\u7528 gdb \u770b\u4e00\u4e0b offset \u642d\u914d heap base \u5c31\u53ef\u4ee5\u77e5\u9053 flag address \u4e86", 
+            "title": "TZ"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#format-string", 
+            "text": "\u5229\u7528 format string \u642d\u914d %s \u53ef\u4ee5 leak \u4efb\u610f\u4f4d\u5740\u7684\u7279\u6027\u4f86 leak flag address  \u53e6\u5916\uff0c\u56e0\u70ba\u662f\u4f7f\u7528 printf_chk \u7684\u95dc\u4fc2\uff0c\u4e0d\u80fd\u4f7f\u7528  $  \u8981\u81ea\u5df1\u7528 %c \u4f86\u8df3\u5230\u6307\u5b9a\u5340\u57df", 
+            "title": "format string"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#note", 
+            "text": "", 
+            "title": "Note"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#peda-in-docker", 
+            "text": "\u9019\u6b21\u6709\u7d66\u4e00\u500b docker \u7684\u74b0\u5883\uff0c\u8981\u5728\u88e1\u9762\u4f7f\u7528 gdb-peda \u7684\u8a71\uff0c\u8981\u6539\u52d5\u4ee5\u4e0b\u8a2d\u5b9a", 
+            "title": "peda in docker"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#dockerfile", 
+            "text": "RUN  apt-get install gdb git -y WORKDIR  /root  RUN  git clone https://github.com/scwuaptx/Pwngdb.git  ;  cp ~/Pwngdb/.gdbinit ~/ RUN  git clone https://github.com/scwuaptx/peda.git ~/peda  ;   echo   source ~/peda/peda.py    ~/.gdbinit  ;  cp ~/peda/.inputrc ~/", 
+            "title": "Dockerfile"
+        }, 
+        {
+            "location": "/Writeups/Others/pwnable.tw/criticalheap/#docker-composeyml", 
+            "text": "critical_heap : \n     cap_add : \n         -   SYS_PTRACE", 
+            "title": "docker-compose.yml"
         }
     ]
 }

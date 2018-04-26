@@ -1,0 +1,1387 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>criticalheap - frozenkp's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#criticalheap" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="frozenkp's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                frozenkp's Blog
+              </span>
+              <span class="md-header-nav__topic">
+                criticalheap
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      frozenkp/frozenkp
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    frozenkp's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      frozenkp/frozenkp
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="HOME" class="md-nav__link">
+      HOME
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Writeups
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Writeups
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2014
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2014
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      NoConName qual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        NoConName qual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2014/NoConName_qual/inBINcible/" title="inBINcible" class="md-nav__link">
+      inBINcible
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      2015
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        2015
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1">
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      B-Sides Vancouver
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        B-Sides Vancouver
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2015/B-Sides_Vancouver/Delphi/" title="Delphi" class="md-nav__link">
+      Delphi
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      2017
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        2017
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1">
+    
+    <label class="md-nav__link" for="nav-2-3-1">
+      HITB CTF
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-1">
+        HITB CTF
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2017/HITB_CTF/2017_Dating_in_Singapore/" title="2017, Dating in Singapore" class="md-nav__link">
+      2017, Dating in Singapore
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2017/HITB_CTF/Flying_High/" title="Flying_High" class="md-nav__link">
+      Flying_High
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2017/HITB_CTF/Pasty/" title="Pasty" class="md-nav__link">
+      Pasty
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
+    
+    <label class="md-nav__link" for="nav-2-3-2">
+      seccon CTF
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-2">
+        seccon CTF
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2017/seccon_CTF/Qubic_Rube/" title="Qubic Rube" class="md-nav__link">
+      Qubic Rube
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2017/seccon_CTF/putchar_music/" title="putchar music" class="md-nav__link">
+      putchar music
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      2018
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        2018
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-1" type="checkbox" id="nav-2-4-1">
+    
+    <label class="md-nav__link" for="nav-2-4-1">
+      BambooFox CTF
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-4-1">
+        BambooFox CTF
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2018/BambooFox_CTF/water-impossible/" title="water-impossible" class="md-nav__link">
+      water-impossible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2018/BambooFox_CTF/infant-gotoheaven/" title="infant-gotoheaven" class="md-nav__link">
+      infant-gotoheaven
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2018/BambooFox_CTF/infant-gogogo/" title="infant-gogogo" class="md-nav__link">
+      infant-gogogo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Others
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        Others
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5-1" type="checkbox" id="nav-2-5-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-5-1">
+      pwnable.tw
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-5-1">
+        pwnable.tw
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Start/" title="Start" class="md-nav__link">
+      Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hacknote/" title="hacknote" class="md-nav__link">
+      hacknote
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dubblesort/" title="dubblesort" class="md-nav__link">
+      dubblesort
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        criticalheap
+      </label>
+    
+    <a href="./" title="criticalheap" class="md-nav__link md-nav__link--active">
+      criticalheap
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#observation" title="Observation" class="md-nav__link">
+    Observation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struct" title="struct" class="md-nav__link">
+    struct
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" title="system" class="md-nav__link">
+    system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" title="name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal_1" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" title="time" class="md-nav__link">
+    time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#play_system" title="play_system" class="md-nav__link">
+    play_system
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-the-name-for-the-heap" title="Set the name for the heap" class="md-nav__link">
+    Set the name for the heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unset-the-name-in-the-heap" title="Unset the name in the heap" class="md-nav__link">
+    Unset the name in the heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-value-of-name" title="Get the value of name" class="md-nav__link">
+    Get the value of name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#play_normal" title="play_normal" class="md-nav__link">
+    play_normal
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-the-content-of-heap" title="Show the content of heap" class="md-nav__link">
+    Show the content of heap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" title="delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leak-heap-base" title="leak heap base" class="md-nav__link">
+    leak heap base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tz" title="TZ" class="md-nav__link">
+    TZ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-string" title="format string" class="md-nav__link">
+    format string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" title="Note" class="md-nav__link">
+    Note
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peda-in-docker" title="peda in docker" class="md-nav__link">
+    peda in docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-composeyml" title="docker-compose.yml" class="md-nav__link">
+    docker-compose.yml
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#observation" title="Observation" class="md-nav__link">
+    Observation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#struct" title="struct" class="md-nav__link">
+    struct
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" title="system" class="md-nav__link">
+    system
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name" title="name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal_1" title="normal" class="md-nav__link">
+    normal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" title="time" class="md-nav__link">
+    time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#play_system" title="play_system" class="md-nav__link">
+    play_system
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-the-name-for-the-heap" title="Set the name for the heap" class="md-nav__link">
+    Set the name for the heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unset-the-name-in-the-heap" title="Unset the name in the heap" class="md-nav__link">
+    Unset the name in the heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-the-value-of-name" title="Get the value of name" class="md-nav__link">
+    Get the value of name
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#play_normal" title="play_normal" class="md-nav__link">
+    play_normal
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-the-content-of-heap" title="Show the content of heap" class="md-nav__link">
+    Show the content of heap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete" title="delete" class="md-nav__link">
+    delete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" title="Conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leak-heap-base" title="leak heap base" class="md-nav__link">
+    leak heap base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tz" title="TZ" class="md-nav__link">
+    TZ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format-string" title="format string" class="md-nav__link">
+    format string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" title="Note" class="md-nav__link">
+    Note
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#peda-in-docker" title="peda in docker" class="md-nav__link">
+    peda in docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" title="Dockerfile" class="md-nav__link">
+    Dockerfile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-composeyml" title="docker-compose.yml" class="md-nav__link">
+    docker-compose.yml
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/Writeups/Others/pwnable.tw/criticalheap.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="criticalheap">criticalheap</h1>
+<blockquote>
+<p>Challenge link: <a href="https://pwnable.tw/challenge/#8">criticalheap</a></p>
+<p>Category: pwn</p>
+<p>Writeup: <a href="https://github.com/frozenkp/CTF/tree/master/others/pwnable.tw/criticalheap">criticalheap</a></p>
+</blockquote>
+<p>There are some secrets . Try to capture <code>/home/critical_heap++/flag</code>.</p>
+<p>We recommend you to use the provided docker environment to develop your exploit:</p>
+<p><code>nc chall.pwnable.tw 10500</code></p>
+<p><a href="https://pwnable.tw/static/chall/critical_heap.tar.gz">critical_heap.tar.gz</a></p>
+<h2 id="observation">Observation</h2>
+<p>這題有很多個選項可以使用，以下講可能會用到的部分</p>
+<h3 id="struct">struct</h3>
+<p>這題有三個 struct (normal, time, system) 在一個 union，一開始就先在 .bss 段宣告長度 10 的 struct 陣列，其中某些變數 (name, value...) 是存字串的指標</p>
+<h4 id="normal">normal</h4>
+<div class="highlight"><pre><span></span>00000000 name
+...
+00000018 content
+...
+</pre></div>
+
+<h4 id="system">system</h4>
+<div class="highlight"><pre><span></span>00000000 name
+...
+00000020 value
+...
+</pre></div>
+
+<h3 id="create">create</h3>
+<h4 id="name">name</h4>
+<p>name 的部分是先 read 進來以後，用 strdup 放到 struct 上的，所以也是存在 heap 上</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/HRioEtgDubcktNh_fYUY7wU3B97Fhl0N1s_WlziejzYyus1q4n7EOJBMOBYxLH0V0GCDLMOT0Pl9AmmwCNQrr1A6H8xP5g2yT8G3ydgiDkL4OEbt8V-RKgXAhObyCN4wH1400x7kEevBWC7-jb_MVFsXpOY6JNb9dZ9a8Hy7rvnBGx-Y81hJ3Xit91ZcBn6vycAdHBqoS8oXfvRLdyfMdsr7zDaua8HLcBeXV-rUZZxTRLtaAGmQmLN5bME5crfzlYW8qqtdULA-OY9XY_A7eQ09ERImmK2UAw5_guRQNw5NBjakI9QAPkRAiw4SeG0UULshVV9RJ_QFSPd9543hbXYU34Ce58SzhLzAGl-cyG7HRWO4_idvRYGNd-Sp_kV2WM7Q8DkxTusVHPKoEIlUFOn_HR9uN4DYwJSLj3n9CZc_Ih-eKD7g_CXMUVORWrgz6MW5fIVkc76Yhojc0i3reMe4CYu16BEnd7yHsSMsU6LL63s_Tnfrh7gncvVxJ_U8OBMAot5BwAhpaH6ep4HaY9CsrPbO2K9wqNUwhMPWMZkbER1cHYtpTel_J-lu4vTIXNls2CdtvxvWhu6X1l6zOau5ChFA8EP_X278Gw=w1276-h268-no" /></p>
+<h4 id="normal_1">normal</h4>
+<p>normal 的部分需要輸入 content，它是直接 read 到 rax + 0x18 (struct 上的 0x18) 的位置，沒有在後面補上 <code>0x00</code></p>
+<p><img alt="" src="https://lh3.googleusercontent.com/o2Wd0w27_WmLaBxm1b7C3f3Ljc8KXm3jgITPIzC85-_egjLALASqWzOTh1MoVSUP3FW7x_kQqWKRV9biNzIg7T_w5a2iexeNO1_Rwt401QVz4VXXsYlWuPb31E7hjRD5XuXzfn8tZT4518TtzD76DpnfgaqgZfi660kVxxjGfaQ0rd5UASBrnIYRtovxf1Sc76dhwSx6GJuxCAkFOkuysmSj8zTXYY3dxPQKRCfgty0lUVbrAxvWUtx7wFp3gJUkWZ1hZ6cyu1Xw9PCajFJDclhuDvPQxmkMXopfe59W_9FnkRqK8yRjfCLyIjN1S0u0M_PHW0tiUv05qJ6IcRrZZsgdm7RbcCdUOlR9Oh2V2Sm2vHu_dLW71z9YRsdU85NuLJ2enXpnbO0yAonhOdw0C7XDVVBVGwdMpiHswh33h45T6W6F-pGiJPd0YXhwvm_RNGzP2qIzalSJgt4Xx0a_ik2dEiqVsl9w3s26wfJZNL1zFUuQiTbj_cM3AuLYQMVLGqTJUQFwibw_JAmJwZb1AiQe7Gl3g-NqwoGEqZAGaJxeVcc8KJM5l_p2IU3j7IGuvhiPfiYPcgzhCPIzMXt45crDOAfudA0YGkeKzg=w1056-h356-no" /></p>
+<h4 id="time">time</h4>
+<p>time 會用 localtime 拿取現在的時間以後，處理完存進 struct</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/SAHGnzTC95qnCrmZ-Yft6oQL5Pqd3miPspjdSvJrUFFkroKJxPe5KgqcbJz7nvo4JErhf8vSbUWDUwAHE4u2By6x5jOCiRMqFtLneAD5LJjs2GMxrS5oEyK3EnIClQwx44vij4AsC1qF4YhNVN1UxvDAgiW6CeRz7ZoHD5zlMsYtbURDiQQKF9l6zZ13mOjj3AWitXljCQAI4fBtAIRKjAxCvYxqgWAfjHXBJaMrnSHcq4HHpV789w27GIFNzgXic__--yo6ZN6Zr_xoivtfiMGv7IKQrf-2yBm1q11U8kpkAp7Js6ffchq5G9QvbrKORDY_VhqkCQFiOv8GIELiocCuyRYzvkD7lkmz6Uh7o0FOAlEFMFgcEh2AqpgzImTLeuKX1aK3TsirPf-xuczKyn3-zUkik1Ag5Uaf7kOg93aFlE0SpFFR9eIkiFfjgihSa6DRi9JekqhFjVvOcRKz-FRyr7ANd8nA8rhtw_zEqYkREQJsSmCC7en6fKj1jGJmlamVURslTkVN4K2QA4dBhdLODGLBGWODul819OAaTk1t8thWpGAhZiJew9Gz78NNwH92iDT4nUBYzJCXVmU5Ii11OasbbpqRLKzW_w=w1002-h136-no" /></p>
+<p>localtime 先使用 getenv 抓取環境變數 TZ 的值，接著讀出 TZ 所指的檔案，並將內容存在 heap 上</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/S-nRWfygmHDW2tbPlXqgsxMg5Meu7dCKK8JufB6iuuAGSrNfFBMpit1CeHasz8FpvBzkZx1ZU0T9dpS25ZXojRhIi5a6AV64Noi-OBAllXM_tIWQKsy1PBhFXHqkViBxx0YUpi1Y2hsiy9G9WygQ5veCY10PUik-tXV2HxFruyDtMPvt_-7zjqbkeYWtA_OUvWcjfMTw7dGpkqdVVBr2uA7GHZMMAYg1-_iJhydOdJwRoq8lGkCgPtKr3a4n07YWq_8pDTCnrqaf_dLGWeh_yGqqMiycjtIIitGST0IQKiXKwsUaN5sh-Rg4mb3Htg-Xa6sbvf_bbA7yDWJQUQa6lOjjdvhy5q9TACYAyogovCNsKeBUd2w2OAIBSjJLOQH9qzHVrRoAAgvl4S2dLslZrdYNGPLGMVY1JufdWrO5A6U0WaNHNEhLuSYjdtAJyVWqrYikZIL-v6iWSN7ipC3GteNZDrqoOV-AzRonWR5e6lfEucvFmeNh0pjtvJhRb_VGeZEYq4e-AWOy5PnehUE9DNc0f-EFmSrA2QbicFSyD2CkIDfSWXd-xssBASTmQIY7_5znfDWBp7Lxf72jyMqS-yp8a6I5IpfrfDUdNw=w1710-h456-no" /></p>
+<p><img alt="" src="https://lh3.googleusercontent.com/Gj8sVF3MzU6zNKtLC5T6Ue6nC2QdS8mc2MSzHOEUbzOMzVfZ3JClHbqp4fM1Gcb-f9-qD1-zf95K8LwVIj29fYUEbNcIeCQ1i2MjBjMPE6aBwao2pz5MmCB0gaOoF7m9uu4uB65JESAatFIMedlzLTynGsR2s6sixmStuTDwkniCaHKaJd_TF-NJTBSr3GLFRipTDbzmRh0-bZrB2Iuh3QxjC0fv-jq3Mn7Ni3iWHS3F3gNkFcfBNrNJgYHxpTQEOlkeGqI3YSxNk2GMtFVFrekkZp9n8t16_XCr0ms5JRU8AOS2EkMBIX9DfoXB8F-qUbQ7u-xbzuZIvqc0ojSGUrBfVdPYrxFm68CUMuKuJk9AgZnhU-nEJDUGfYP-4cmEl7jDj1C8VBX3lyEpRCzrt9x8IuluKtfv_B4Aef15F27pimpEV2SeM6CQo5uSXF17OY0p_HG6zkgzRFE0GXWDHkEwrRVs1PgiABNI13HpbUgogCbpHOwzJQ3CEcp8yXAAbotKuYbwD752S0FVHA3IyyrQlFZgvzvurGNPW790AK9zvZFVw2Lzdrvzt7Ue4hkxKcDDdK139Jz9fCIws7Kl-3IoBdeAKMBNj39R_Q=w1628-h542-no" /></p>
+<h3 id="play_system">play_system</h3>
+<h4 id="set-the-name-for-the-heap">Set the name for the heap</h4>
+<p>這個功能其實就是 setenv</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/VUPdLvI-vjhEM5rawdI7-ViPa4z6IEwoBIulyyUv7hnNqwoNWpMcaxUYF07synIZObheb0tnUweo8aXPISRmSikbEe0YHz7zA-uzWdpJbmYVbPXL61Ex63TAYaISlgf_s9wSpwyeRNYVu91aifVho22tjONzzBQqirtPy708HS-itTZdkJjclcxPNqekgvrR_MiqNzaQfPV1_5XmVRbtc6oMqKEs5ByjIVQwLvTYfs5idV61A92TjjLZwURxqCmZ-N48Uh94wOWzzvxajtSJHX2I-p5GjVb_lSYWXGPpFhHCVvlQfsqOx0XicO5yzJH2Kn-Q8vddZIbYNDLDAuWuO7-e5Vom8zSTdo7WWHMlyYswGkvWr4AZ57ltY6dF8Xa2vmqqKsmm2CF2Ey-yEywmt8BgEN3017SVFlX9dg_02xUVGQqOrRkbolIHs-cxUVqhPo8XmsvT2IUsj9UNoK07HQFs8Uvv74wdATHonLtbz4gpIdewwygipAiS8uw2eccjUm22KMBbsJkCmFjCwpo0i0IasbLeq6n2wed8v1YTSIJc-A1rBA60fKnkhbBqMwEK9_PPuLSn5qExpX0wkdDomPjIjiII8jlKo2AAaA=w962-h262-no" /></p>
+<h4 id="unset-the-name-in-the-heap">Unset the name in the heap</h4>
+<p>這個功能是 unsetenv</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/iJiuBcOLwCoTHspxZnATe7k4dNRcuECr7NhGETeDmgak82PofrIkHVkg5gF5gJ0I_BUaVWglwn6A0yXJ0bqh0_zdavLgplsZRXrRDZ0sVFV4L69Ghgvm-YYQocJdzI1N8amMMQCKh_hYN_8QTqFQcldw02COdw5_s3y-UqQ4IMbEalBCOyy6XqTDlTlPiCNLwAuvH1htZ7jXZd6lJ7ai1gEg_JyI8CaS8HV0EZ7Vp8HNjXstcenSIOF9N0mjZ8oI6JxKyeV_pv3DI2KUK5JkzZOUcUopNWJNl_-uybpKVKXiVPYilcQ0-lz3eDmXu-inV9JR1tM8ZtzzCh-EjOM604k_rUfTxOnrMzN60Bu3ypRWEoYhJcalsURcaBwiI6SoRFhSbAhfxNZ2PVWHQcPvGad1BvG-p8Y5xtz441JUZarS6IdsDPHsCtE1yClXZdYUC0J3WaPG9gC1H8e2l-cM7xGXZCFatyUTycCLSsImrc1lRNk9t4GrLb9a-PTodszvCc5qERhYceQvPGQhdQWUUupo7b6Y9FjK6Mo3LNh9Cc5lmKR58QT2JIUXpSpIrnmN8j4O6prMkwJPSxOx3NJwx3DOvLFGMBnMWIsxUQ=w1028-h188-no" /></p>
+<h4 id="get-the-value-of-name">Get the value of name</h4>
+<p>這個功能比較特別，會先用 getenv 抓輸入的 name，接著將抓到的指標 (指向 heap 上存 value 處) 存在 rax + 0x20 (struct 上 0x20 的位置)</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/KUYOQYgh4ia7j83GdAI9f3wPbR8dU2U_hyUIpqUlVqTDhbKtVRmxqInCORFFUbaLenS7rVruzWs9zG6ZeUh99ybm_jkSTxThh_sX_wG6ZWyLOn4SQUD0lIRmuQsLfwJdVr7GRyHjJfE2ONbuKD6c7MDBTegtHffmr6LqhWvmZBoRvEuYTCxQNPpJejCaX9G4zjStWmY3ch20M9HdL2V30Hho-n1UhURIlLfC024iqzfQHl1hSz_PBdsW17qJUivOlYyp7p2yZ0YHR0UfgUaLlLb51P08od8_YBNulrUwP7-v_AddRslRmsOPMkLVCgrJXwwb2_T35AcjxxdaR-F3sH1pk-n07oUT5vbCubjDaMxeCnM-NDF11t3nG4dHsTsaOGKmozoL3BIws7Rgl50tN4OSHrLkVr-mqCHTf_Yh35BgHWs6_NZ2LzKABq0gaWLkL7cpJCozw8NyTNqeO_a7CnzjYbAv6rqzsDx8cYSRqVeFY4PLncmPEwu2crmKBbk6dRnjq874AOCdpUIiM3c5E16JS5Tdhucnr4HDp7irYTOIyQX2oN16mb-xgvhDmnGXBnyDGcRn41AX_gHSNzX9qD1apUCPQ9iPOdnDGw=w1166-h406-no" /></p>
+<h3 id="play_normal">play_normal</h3>
+<h4 id="show-the-content-of-heap">Show the content of heap</h4>
+<p>這個功能有 format string 的漏洞，而且是使用 printf_chk</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/uIYwP7wKT-MN6iy601b5uR_TKxJVEQjne8OjbF_Z8Fwpcd2EIHpf1_3hGCI4cLIx--OBxAsoLK3jh8gxpMcVZh0pmHfZyZGgfX1lootUx3W39bXIwEWJrDvLHoBSKudon7QxQkjclFtkpWXBS5B_nhAE3BMmRZuaBJG2kieWB-ePU7sIk44NUrXvKaQ3VQIwYT0fA76xXEbzie2RhEWMJdRZg5OXlRIZw0ZphLMMsbdlMpPEwNFx6wgxe4hSf9SV_iXbIAkd0QQliA6rZrpNtoEjMBIq2y2LiBAGOrJlmw3MzXgi7d_TbxBALV9Uqaxr163Aheo8eyTUF02kQ48TvCXZHSuslBtVzXAGn4BHTYRAa-XXT2bexSdn8T7SgME9UFELJLimU3Q2OpHoXhSuPjeEXmwnuvQajTBC9u0Qh-x_dNV5cZS3u59DcYhQAKFvaww0Pe9KHzzlbGXDbmPuh8slyg8J7aabAh6yn_2G6iT2lNfIYLruQsdDOGnTt5Hc_wS1bYWHUDX7m48tD_lx5Vi4CRZEDqK72FLYsyMeyeTJLlZicX9eNqboc4jl6tvTr_cpZbsSvhgg6pEJfUQj0Vf9woaVgsn4Ero4kA=w1318-h494-no" /></p>
+<h3 id="delete">delete</h3>
+<p>delete 實際上只有把指定的 struct 標成 0 而已，上面的資訊並沒有清空</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/WjHYiGRcaEku15F4WnbC-8V2mVZBsTWl6o-WHJDteTh5gZjjtoKIZtfTkei_GXMfthhcPoICihB7IT84R8z98PZMzlaZ0fPhe_7HQFmddIOHKSZUt6W1S4TRBV22n8crP82RS1NpycWu3B0O3tVc8g7jz8sAusQUgN_faPtkdRIlTUuWs0hi4lOfFP37s91pM2q_0BmD5WPLkzgCrox6wubwZAZJ873B5xbMQZpn1i8N5A9cvuK3cmZC9AKx6YVxjMzx03B0_rivHOCMfu_sz0BraVx2hhfgKlzKnrywlrLEdZ9B7lh7VsonTeDGEM0MVagnyHx5eeY6G_4YtRbhARY63zo8N7d_xmMEATbQ_gy8PH63CdvCyhEcpg16OOUMAavZzlq6mi2cti9ydEwAN-qm3fRV5_tB-I0XiPu66aArDRtU5zeiqjmPkYU9iOgP9vgaPcEnqJhI4aGuhvWauDHWPyoy6Tgwlr-TCbTy8z-2rlOQpC7TmWs6PWOATSGwjDsVliWBnTCvb36GCHdCWRa-tBkngtsdS92NnHM4rkNGR2UPk0dcmkIrlsbozPyhZCqZbNuwLL7zAjzod9a7hmR2sRSkigthQFFziw=w1090-h448-no" /></p>
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+<li>create_normal 讀取 content 時沒有結尾</li>
+<li>play_normal 有 format string 的漏洞</li>
+<li>setenv 可以改動 TZ 的值</li>
+<li>delete 沒有清空</li>
+</ul>
+<h2 id="solution">Solution</h2>
+<p>解法步驟如下：</p>
+<ol>
+<li>leak heap base 位置</li>
+<li>利用 setenv 改動 TZ 以後，用 localtime 將 flag 讀到 heap 上</li>
+<li>利用 format string 印出 flag</li>
+</ol>
+<h3 id="leak-heap-base">leak heap base</h3>
+<p>這個部分要利用 "delete 沒有清空" 的漏洞</p>
+<p>先創 system，接著到 play 隨便創一個環境變數，再使用 play_system_get_value 來將環境變數的位址放到 struct 上，這是為了取得一段 heap address</p>
+<div class="highlight"><pre><span></span>0x000 name
+0x020 value  (heap address)
+</pre></div>
+
+<p>接著 delete 掉，然後創一個 normal 的 struct，此時 normal struct 會蓋在 system struct 原本的位置上</p>
+<p>因為 content 存在 0x18，與原本的 value 差 0x8，要輸入 8 個字元才能碰到 value 的位置</p>
+<blockquote>
+<p>不要輸入 \n 不然輸出會被截斷</p>
+</blockquote>
+<div class="highlight"><pre><span></span>0x000 name
+0x018 content (&#39;AAAAAAAA&#39;)
+0x020 value  (heap address)
+</pre></div>
+
+<p>最後就使用 show 把 struct 印出來就可以得到 heap address 了</p>
+<p>因為在 heap 上相對位置不變，用 gdb 看一下跟 base 差多遠，leak 出來後減掉就是 heap base 了</p>
+<h3 id="tz">TZ</h3>
+<p>這個部分就創一個 system 然後用 setenv 把 TZ 設成 <code>/home/critical_heap++/flag</code></p>
+<p>接著創一個 time struct，就會在 localtime 將 flag 讀取到 heap 上了，然後用 gdb 看一下 offset 搭配 heap base 就可以知道 flag address 了</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/Kyn4pR56pdq8SDxyx-nCH3SUIQ3X5nPs2w7J3A83lBs79-FGJMFZAroE_qzvLddXrWOoUGA7q-UgVlZI2cCkY5DKAI9A2U4Z8ZyKWLta2Z8c9Lu7C6PpsuM85LciaiA8FAiEHiexjJ5IWVadfH1ro5TjEuoFigzkNL1eFFsMteUkGaXP0keIlqnkbMmlMOdUg8Vdu2tzaDltKoG55MudTTZinVzGE1WjLPq4NwZ8bKCsCNWGGuAz07CQqB0GVT-AJxQ_h2Ny5dzmfPia_c93eDDIJrszgkyaxXzyn_Vp-ydacc0jc4ku4-tpmc5gdLbJNwxxMScSudTCAwmG6JUz_StQRAdRRPJkrTo1dIerzfOCXvOh7k2QqAWvfEeYsIzbEzCFraYCDtaFgNHjQdQdWjAQDXrsb65a6Bc8ZDatDeRYkECL7brbOuFxvy4DjjC8PbiFkP05W5M9vkiwChR25NXX1dXaR5fG9HRxhnUIsSqZPBUTAAZ-r_IYq_NSVGraJvZALsWXruKL5a6LXNdvnFnT8X1FuIcBbS2wwLZVrnWJZ3QyyOreF5aMxGz5O6ZMlu7GcajaRrBlHALdWJv6M3BelUqhBRZRlD240w=w1990-h750-no" /></p>
+<h3 id="format-string">format string</h3>
+<p>利用 format string 搭配 %s 可以 leak 任意位址的特性來 leak flag address</p>
+<p>另外，因為是使用 printf_chk 的關係，不能使用 <code>$</code> 要自己用 %c 來跳到指定區域</p>
+<p><img alt="" src="https://lh3.googleusercontent.com/OgYVPHk-ayIh0_tNudYfMMNJHLux-M_oW3gicAzh2YOpFhJugoYx6oAix7OqDqoGo5Q3s-ZJeoiVs7BzRNCa-ZgrDzGAvpjc5moz-ecE-6aFBM9aCooCcMmTPyZJHzmM2RGA9IP9N30n55TryLkhT895zQEP1v2DO8e-5LJJpg9K5LqJVtVHCvZ3UpivGOL2x_SnnqDbDEXsjlhUBxeFPjNHVm336THU28k4As_m4Wn6rttwlPUxA9vCywCVimZv5AP1841Ki_p9uAu5sBkWeNLYusBkJypTnvHbQLK-Z6vL64c5_HvXgR1sIYffo-BB2RqKLP51oDw4EvSiMVOslbhSC7LXEFZTZyaxGkaFwkSACYRn6A91EBR0Wy409eDyqiJ16X5hDivntwkKYY0k7qS46YrKgtUZGDczA9ihpM-rg6ps9NT4irKhULFjn3G14XNkWNlL9w3ErYLqyaqCDb7ARWJ6uAdukSGBRcym70YUA0eeMp9_5t8z8nl9XDOYCKDZn_2_OUmlGyfvvvJzINq1-3T8qlaPCzzVd_mZikSUF-XorwN7EW5g98pBmU4aXtCQQwl5IXLgSa1vvt-XPeGfkXs_DcfHsIQifQ=w1488-h932-no" /></p>
+<h2 id="note">Note</h2>
+<h3 id="peda-in-docker">peda in docker</h3>
+<p>這次有給一個 docker 的環境，要在裡面使用 gdb-peda 的話，要改動以下設定</p>
+<h4 id="dockerfile">Dockerfile</h4>
+<div class="highlight"><pre><span></span><span class="k">RUN</span> apt-get install gdb git -y
+<span class="k">WORKDIR</span><span class="s"> /root</span>
+<span class="k">RUN</span> git clone https://github.com/scwuaptx/Pwngdb.git <span class="p">;</span> cp ~/Pwngdb/.gdbinit ~/
+<span class="k">RUN</span> git clone https://github.com/scwuaptx/peda.git ~/peda <span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;source ~/peda/peda.py&quot;</span> &gt;&gt; ~/.gdbinit <span class="p">;</span> cp ~/peda/.inputrc ~/
+</pre></div>
+
+<h4 id="docker-composeyml">docker-compose.yml</h4>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">critical_heap</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">cap_add</span><span class="p p-Indicator">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SYS_PTRACE</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../dubblesort/" title="dubblesort" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                dubblesort
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../../../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
