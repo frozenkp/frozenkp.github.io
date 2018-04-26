@@ -1,0 +1,14 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to frozenkp's Blog", 
+            "title": "HOME"
+        }, 
+        {
+            "location": "/#welcome-to-frozenkps-blog", 
+            "text": "", 
+            "title": "Welcome to frozenkp's Blog"
+        }
+    ]
+}
