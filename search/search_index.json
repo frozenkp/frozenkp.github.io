@@ -2,13 +2,18 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome to frozenkp's Blog", 
+            "text": "Welcome to frozenkp's Blog\n\n\nEnjoy all informations here.\n\n\nIf you like this blog, just give me a star. OwO\n\n\nContact Me\n\n\nFeel free to contact me for any questions.\n\n\n\n\nFacebook\n\n\nTwitter", 
             "title": "HOME"
         }, 
         {
             "location": "/#welcome-to-frozenkps-blog", 
-            "text": "", 
+            "text": "Enjoy all informations here.  If you like this blog, just give me a star. OwO", 
             "title": "Welcome to frozenkp's Blog"
+        }, 
+        {
+            "location": "/#contact-me", 
+            "text": "Feel free to contact me for any questions.   Facebook  Twitter", 
+            "title": "Contact Me"
         }, 
         {
             "location": "/Writeups/2014/NoConName_qual/inBINcible/", 
