@@ -894,6 +894,61 @@
             "location": "/pwn/radare2/#jump-table", 
             "text": "\u5206\u6790 switch \u7684\u6642\u5019\uff0c\u958b\u555f jump table \u53ef\u4ee5\u9023 switch options \u7684\u5167\u5bb9\u90fd\u5206\u6790   \u958b\u555f\u4ee5\u5f8c\uff0c\u5982\u679c\u5207\u63db\u5230 Visual Mode \u6703\u770b\u5230\u5f9e libc_start_main \u958b\u59cb\u7684\u6574\u5f35\u5716\uff0c\u8981\u8dd1\u5f88\u4e45 (\u539f\u56e0\u4e0d\u660e)   e anal.jmptbl = true", 
             "title": "\u958b\u555f jump table"
+        }, 
+        {
+            "location": "/tools/docker/", 
+            "text": "Docker\n\n\nDockerfile\n\n\nFROM\n ubuntu\n\n\n\nMAINTAINER\n frozenkp\n\n\n\nWORKDIR\n /root\n\n\n\nRUN\n apt-get update\n\n\n\n\nbuild\n\n\ndocker build -t \nname:tag\n .\n\n\n\n\ntag\n\n\ndocker tag \nname:tag\n \nname:tag\n\n\n\n\n\nStandard\n\n\nrun\n\n\ndocker run -it \n{\n--name pwn_env\n}\n \n{\n-v /??/data:/root/data\n}\n \n{\n-p \nhost:container\n}\n \n{\n--privileged\n}\n image_name /bin/bash\n\n\n\n\n\n\n--name\n : container name\n\n\n-v\n : volume\n\n\n-p\n : port\n\n\n--privileged\n : ptrace privilege\n\n\n\n\nexec\n\n\ndocker \nexec\n -it container_name /bin/bash\n\n\n\n\ncp\n\n\n# from container to host\n\ndocker cp container_name:src_path dest_path\n\n# from host to container\n\ndocker cp stc_path container_name:src_path\n\n\n\n\nstart\n\n\ndocker start container_name\n\n\n\n\nstop\n\n\ndocker stop container_name", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/tools/docker/#docker", 
+            "text": "", 
+            "title": "Docker"
+        }, 
+        {
+            "location": "/tools/docker/#dockerfile", 
+            "text": "FROM  ubuntu  MAINTAINER  frozenkp  WORKDIR  /root  RUN  apt-get update", 
+            "title": "Dockerfile"
+        }, 
+        {
+            "location": "/tools/docker/#build", 
+            "text": "docker build -t  name:tag  .", 
+            "title": "build"
+        }, 
+        {
+            "location": "/tools/docker/#tag", 
+            "text": "docker tag  name:tag   name:tag", 
+            "title": "tag"
+        }, 
+        {
+            "location": "/tools/docker/#standard", 
+            "text": "", 
+            "title": "Standard"
+        }, 
+        {
+            "location": "/tools/docker/#run", 
+            "text": "docker run -it  { --name pwn_env }   { -v /??/data:/root/data }   { -p  host:container }   { --privileged }  image_name /bin/bash   --name  : container name  -v  : volume  -p  : port  --privileged  : ptrace privilege", 
+            "title": "run"
+        }, 
+        {
+            "location": "/tools/docker/#exec", 
+            "text": "docker  exec  -it container_name /bin/bash", 
+            "title": "exec"
+        }, 
+        {
+            "location": "/tools/docker/#cp", 
+            "text": "# from container to host \ndocker cp container_name:src_path dest_path # from host to container \ndocker cp stc_path container_name:src_path", 
+            "title": "cp"
+        }, 
+        {
+            "location": "/tools/docker/#start", 
+            "text": "docker start container_name", 
+            "title": "start"
+        }, 
+        {
+            "location": "/tools/docker/#stop", 
+            "text": "docker stop container_name", 
+            "title": "stop"
         }
     ]
 }
