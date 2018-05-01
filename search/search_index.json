@@ -897,7 +897,7 @@
         }, 
         {
             "location": "/tools/docker/", 
-            "text": "Docker\n\n\nDockerfile\n\n\nFROM\n ubuntu\n\n\n\nMAINTAINER\n frozenkp\n\n\n\nWORKDIR\n /root\n\n\n\nRUN\n apt-get update\n\n\n\n\nbuild\n\n\ndocker build -t \nname:tag\n .\n\n\n\n\ntag\n\n\ndocker tag \nname:tag\n \nname:tag\n\n\n\n\n\nStandard\n\n\nrun\n\n\ndocker run -it \n{\n--name pwn_env\n}\n \n{\n-v /??/data:/root/data\n}\n \n{\n-p \nhost:container\n}\n \n{\n--privileged\n}\n image_name /bin/bash\n\n\n\n\n\n\n--name\n : container name\n\n\n-v\n : volume\n\n\n-p\n : port\n\n\n--privileged\n : ptrace privilege\n\n\n\n\nexec\n\n\ndocker \nexec\n -it container_name /bin/bash\n\n\n\n\ncp\n\n\n# from container to host\n\ndocker cp container_name:src_path dest_path\n\n# from host to container\n\ndocker cp stc_path container_name:src_path\n\n\n\n\nstart\n\n\ndocker start container_name\n\n\n\n\nstop\n\n\ndocker stop container_name", 
+            "text": "Docker\n\n\nDockerfile\n\n\nFROM\n ubuntu\n\n\n\nMAINTAINER\n frozenkp\n\n\n\nWORKDIR\n /root\n\n\n\nRUN\n apt-get update\n\n\n\n\nbuild\n\n\ndocker build -t \nname:tag\n .\n\n\n\n\ntag\n\n\ndocker tag \nname:tag\n \nname:tag\n\n\n\n\n\npush\n\n\ndocker push name:tag\n\n\n\n\nStandard\n\n\nrun\n\n\ndocker run -it \n{\n--name pwn_env\n}\n \n{\n-v /??/data:/root/data\n}\n \n{\n-p \nhost:container\n}\n \n{\n--privileged\n}\n image_name /bin/bash\n\n\n\n\n\n\n--name\n : container name\n\n\n-v\n : volume\n\n\n-p\n : port\n\n\n--privileged\n : ptrace privilege\n\n\n\n\nexec\n\n\ndocker \nexec\n -it container_name /bin/bash\n\n\n\n\ncp\n\n\n# from container to host\n\ndocker cp container_name:src_path dest_path\n\n# from host to container\n\ndocker cp stc_path container_name:src_path\n\n\n\n\nstart\n\n\ndocker start container_name\n\n\n\n\nstop\n\n\ndocker stop container_name", 
             "title": "Docker"
         }, 
         {
@@ -919,6 +919,11 @@
             "location": "/tools/docker/#tag", 
             "text": "docker tag  name:tag   name:tag", 
             "title": "tag"
+        }, 
+        {
+            "location": "/tools/docker/#push", 
+            "text": "docker push name:tag", 
+            "title": "push"
         }, 
         {
             "location": "/tools/docker/#standard", 
