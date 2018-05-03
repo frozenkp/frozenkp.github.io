@@ -1115,29 +1115,29 @@ Your choice :4
 <h4 id="add-two-notes">Add two notes</h4>
 <p>I add two notes with size 32 and contents are "aaaa" and "bbbb".</p>
 <p>Here is the value on the heap.</p>
-<div class="highlight"><pre><span></span>0x804b000:  0x00000000  0x00000011    0x0804862b    0x0804b018
-0x804b010:  0x00000000  0x00000029    0x61616161    0x0000000a  &lt;======= note &quot;aaaa&quot;
-0x804b020:  0x00000000  0x00000000    0x00000000    0x00000000
-                        -----------------------------
-0x804b030:  0x00000000  0x00000000  | 0x00000000    0x00000011
-            -------------------------------------
-0x804b040:  0x0804862b  0x0804b050    0x00000000    0x00000029
-0x804b050:  0x62626262  0x0000000a    0x00000000    0x00000000  &lt;======= note &quot;bbbb&quot;
-0x804b060:  0x00000000  0x00000000    0x00000000    0x00000000
+<div class="highlight"><pre><span></span>0x804b000:    0x00000000      0x00000011      0x0804862b    0x0804b018
+0x804b010:    0x00000000      0x00000029      0x61616161    0x0000000a     &lt;======= note &quot;aaaa&quot;
+0x804b020:    0x00000000      0x00000000      0x00000000    0x00000000
+                                            -----------------------------
+0x804b030:    0x00000000      0x00000000    | 0x00000000    0x00000011
+        -------------------------------------
+0x804b040:    0x0804862b      0x0804b050      0x00000000    0x00000029
+0x804b050:    0x62626262      0x0000000a      0x00000000    0x00000000     &lt;======= note &quot;bbbb&quot;
+0x804b060:    0x00000000      0x00000000      0x00000000    0x00000000
 </pre></div>
 
 <p>Let's focus on note "aaaa".</p>
 <div class="highlight"><pre><span></span>           ------------------------------------------------------
-0x804b000: | 0x00000000 0x00000011  0x0804862b  0x0804b018  | &lt;======= struct note
-       ---------------------------------------------|--------
-                            |
-                        -------------
-                        |
+0x804b000: | 0x00000000    0x00000011    0x0804862b  0x0804b018  | &lt;======= struct note
+           ---------------------------------------------|--------
+                                                        |
+                                            -------------
+                                            |
            ---------------------------------v--------------------
-0x804b010: | 0x00000000 0x00000029  0x61616161  0x0000000a  |
-0x804b020: | 0x00000000 0x00000000  0x00000000  0x00000000  | &lt;======= content
-0x804b030: | 0x00000000 0x00000000              |
-       ------------------------------------------------------
+0x804b010: | 0x00000000    0x00000029    0x61616161  0x0000000a |
+0x804b020: | 0x00000000    0x00000000    0x00000000  0x00000000 | &lt;======= content
+0x804b030: | 0x00000000    0x00000000                           |
+           ------------------------------------------------------
 </pre></div>
 
 <p>The first 8 bytes of each blocks are headers of  heap.</p>
@@ -1180,16 +1180,16 @@ Your choice :4
 
 <h4 id="reallocate">Reallocate</h4>
 <p>I add a new note with size <strong>0x8</strong> (0x8 + header = 0x10). Note 2 is allocated to 0x804b038, and it's content is 0x804b000 (original note 0).</p>
-<div class="highlight"><pre><span></span>          ---------------------------------------------------------------
+<div class="highlight"><pre><span></span>              ---------------------------------------------------------------
 0x804b000:    | 0x00000000      0x00000011      0x61616161      0x0804b00a  | &lt;== content
-          ---------------------------------------------------------------
+              ---------------------------------------------------------------
 0x804b010:      0x00000000      0x00000029      0x00000000      0x0000000a
 0x804b020:      0x00000000      0x00000000      0x00000000      0x00000000
-                         --------------------------------
+                                             --------------------------------
 0x804b030:      0x00000000      0x00000000   |  0x00000000      0x00000011  |
-          --------------------------------                  | &lt;== struct
-0x804b040:    | 0x0804862b      0x0804b008                  |
-          ---------------------------------------------------------------
+              --------------------------------                              | &lt;== struct
+0x804b040:    | 0x0804862b      0x0804b008                                  |
+              ---------------------------------------------------------------
 </pre></div>
 
 <h2 id="solution">Solution</h2>
@@ -1200,8 +1200,8 @@ Your choice :4
 <p>Because of the size of struct is 0x10, we can only use only 0x8 as content size (0x8 + header = 0x10). Thus, I put <code>printNote function</code> and <code>puts_got</code>in content to leak base.</p>
 <p>After adding note 2, note 0 is like this:</p>
 <div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">note</span> <span class="p">{</span>
-    <span class="n">printNote</span><span class="p">();</span>        <span class="c1">// 0x0804862b</span>
-    <span class="n">puts_got</span><span class="p">;</span>       <span class="c1">// 0x804a024</span>
+    <span class="n">printNote</span><span class="p">();</span>         <span class="c1">// 0x0804862b</span>
+      <span class="n">puts_got</span><span class="p">;</span>         <span class="c1">// 0x804a024</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1209,9 +1209,9 @@ Your choice :4
 <h3 id="system">System()</h3>
 <p>Before printing note, this program send address of note as parameter to function.</p>
 <p><img alt="" src="https://i.imgur.com/dYKZzfa.png" /></p>
-<div class="highlight"><pre><span></span>                        -----------------
+<div class="highlight"><pre><span></span>                                            -----------------
 0x804b000:      0x00000000      0x00000011  |   0x0804862b  |    0x0804b018
-                        -----------------
+                                            -----------------
 0x804b010:      0x00000000      0x00000029      0x61616161      0x0000000a
 </pre></div>
 
