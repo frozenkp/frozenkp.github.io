@@ -1081,13 +1081,17 @@ ret             ROP gadget
 <h3 id="_1">流程</h3>
 <ol>
 <li>leave：把 <code>rbp</code> 設定成 <code>buf</code></li>
-<li>執行 input_func 並將輸入讀取到 <code>buf</code></li>
+<li>執行 input_func 並將輸入讀取到 <code>buf</code><ul>
 <li>輸入新的 rbp 以及 ROP chain</li>
+</ul>
+</li>
 <li>leave：stack 跳轉到 <code>buf</code> 並將 <code>rbp</code> 設成 <code>buf2</code> </li>
 <li>執行 ROP chain</li>
-<li>是否執行下一次 migration</li>
+<li>是否執行下一次 migration<ul>
 <li>是：跳回 2 (<code>buf</code> 和 <code>buf2</code> 對調，多次 migration 就在 <code>buf</code> 和 <code>buf2</code> 互換即可)</li>
 <li>否：結束</li>
+</ul>
+</li>
 </ol>
 <h2 id="fixed-size-migration">Fixed Size Migration</h2>
 <p>在不能控制輸入長度時，就只能使用原本的 <code>read</code> 來多次輸入 ROP chain</p>
