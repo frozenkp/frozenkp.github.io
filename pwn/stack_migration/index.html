@@ -1122,7 +1122,7 @@ ret             ROP gadget
 <p>第二次執行 <code>main_read</code> 時，會把輸入寫到 <code>buf2 - 0x20</code>，這時後輸入：</p>
 <div class="highlight"><pre><span></span>data (4 bytes) + buf1 + main_read
    ｜              |
-buf2 - 0x20      rbp(buf2)
+buf2 - 0x20     rbp(buf2)
 </pre></div>
 
 <p>這樣輸入以後，就可以把 4 bytes 的 ROP chain 寫入 <code>buf2 - 0x20</code> ，然後再跳回 <code>buf1</code> </p>
@@ -1130,8 +1130,8 @@ buf2 - 0x20      rbp(buf2)
 <div class="highlight"><pre><span></span>+-------------+------+-------------+-------------+--------------+
 | buf2 - 0x20 | buf2 | buf2 + 0x20 | buf2 + 0x40 |     ...      |
 +-------------+------+-------------+-------------+--------------+
-        |         |         |             |
-      第一次     第二次     第三次         第四次
+       |         |          |             |
+     第一次    第二次     第三次        第四次
 </pre></div>
                 
                   
