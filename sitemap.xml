@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-05-03</lastmod>
+     <lastmod>2018-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -47,7 +47,13 @@
         
     <url>
      <loc>/pwn/radare2/</loc>
-     <lastmod>2018-05-03</lastmod>
+     <lastmod>2018-05-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/pwn/stack_migration/</loc>
+     <lastmod>2018-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -57,7 +63,7 @@
         
     <url>
      <loc>/tools/docker/</loc>
-     <lastmod>2018-05-03</lastmod>
+     <lastmod>2018-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
