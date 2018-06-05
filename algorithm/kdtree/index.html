@@ -969,8 +969,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#knnk-d-tree" title="knn使用k-d tree" class="md-nav__link">
-    knn使用k-d tree
+  <a href="#knn-k-d-tree" title="knn 使用 k-d tree" class="md-nav__link">
+    knn 使用 k-d tree
   </a>
   
     <nav class="md-nav">
@@ -984,8 +984,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#k" title="前k個最小值搜尋" class="md-nav__link">
-    前k個最小值搜尋
+  <a href="#k" title="前 k 個最小值搜尋" class="md-nav__link">
+    前 k 個最小值搜尋
   </a>
   
 </li>
@@ -1113,8 +1113,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#knnk-d-tree" title="knn使用k-d tree" class="md-nav__link">
-    knn使用k-d tree
+  <a href="#knn-k-d-tree" title="knn 使用 k-d tree" class="md-nav__link">
+    knn 使用 k-d tree
   </a>
   
     <nav class="md-nav">
@@ -1128,8 +1128,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#k" title="前k個最小值搜尋" class="md-nav__link">
-    前k個最小值搜尋
+  <a href="#k" title="前 k 個最小值搜尋" class="md-nav__link">
+    前 k 個最小值搜尋
   </a>
   
 </li>
@@ -1234,14 +1234,14 @@
 <li>移動到父節點</li>
 <li>重複執行 2, 3, 4 步直到到達根節點</li>
 </ol>
-<h2 id="knnk-d-tree">knn使用k-d tree</h2>
+<h2 id="knn-k-d-tree">knn 使用 k-d tree</h2>
 <p>所謂的 knn 指的是 k nearest neighbors，顧名思義，knn 就是要在一堆資料中找出離某資料最近的 k 筆</p>
 <p>最簡單也最耗時的作法就是全部都計算出距離後，再排列後拿出最近的 k 個，這個作法稱作 <strong>linear</strong></p>
 <p>實際上，也可以利用 k-d tree 以在不用檢查所有資料的情況下，快速找出最近的k筆資料，但問題是上述的 k-d tree 只能找到最近的一個點，因此需要做一點修改</p>
 <h3 id="heap">heap</h3>
 <p>在我的作法中會使用到 <a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E2%80%94%E6%9C%80%E5%B0%8F%E5%A0%86">max-heap</a>，所謂的 max-heap 就是會將丟入的資料存下來，然後可以輸出其中最大值的一種資料結構</p>
 <p><img alt="" src="http://i.imgur.com/cyMhonu.jpg" /></p>
-<h3 id="k">前k個最小值搜尋</h3>
+<h3 id="k">前 k 個最小值搜尋</h3>
 <p>我的作法是使用一個容量為 k 的 heap，在搜尋的過程中</p>
 <ul>
 <li>如果 heap 還未滿，則加入當前的節點，且搜尋當前節點的另一個子樹</li>
