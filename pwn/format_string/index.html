@@ -1444,7 +1444,7 @@ rsi       rdx      rcx  r8        r9              rsp              rsp + 0x8    
 <p>可以透過寫入 argv1 來改動 argv2 寫的內容 (address)，最後再透過寫入 argv2 來寫入指定的位址</p>
 <p>以下範例，假設要在 <code>0xdeadbeef</code> 寫入 <code>0x4</code></p>
 <h4 id="argv1-2-bytes">第一步：透過 argv1 寫 2 bytes</h4>
-<p>一開始先在 argv2 的值寫上 <code>0xef</code> ，payload 如下</p>
+<p>一開始先在 argv2 的值寫上 <code>0xbeef</code> ，payload 如下</p>
 <div class="highlight"><pre><span></span>%48879c%43$hn
 </pre></div>
 

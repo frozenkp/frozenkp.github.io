@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -47,13 +47,13 @@
         
     <url>
      <loc>/pwn/stack_migration/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/pwn/format_string/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -63,13 +63,13 @@
         
     <url>
      <loc>/reverse/radare2/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/reverse/go/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,7 +79,7 @@
         
     <url>
      <loc>/tools/docker/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -89,7 +89,7 @@
         
     <url>
      <loc>/algorithm/kdtree/</loc>
-     <lastmod>2018-10-08</lastmod>
+     <lastmod>2019-03-25</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
