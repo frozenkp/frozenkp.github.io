@@ -1213,19 +1213,19 @@ ret             ROP gadget
 </ol>
 <h3 id="migration-rop-chain">交替 migration 寫入 ROP chain</h3>
 <p>一開始是先送第一次 migration 的輸入</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + buf2 + main_read
+<div class="highlight"><pre><span></span>payload (4*8 bytes) + buf2 + main_read
       ｜              |
   rbp - 0x20         rbp
 </pre></div>
 
-<p>前面 4 bytes 就隨便放就好了，接著將 <code>rbp</code> 設成 <code>buf2</code> ，然後回到 <code>main_read</code></p>
+<p>前面 4*8 bytes 就隨便放就好了，接著將 <code>rbp</code> 設成 <code>buf2</code> ，然後回到 <code>main_read</code></p>
 <p>第二次執行 <code>main_read</code> 時，會把輸入寫到 <code>buf2 - 0x20</code>，這時後輸入：</p>
-<div class="highlight"><pre><span></span>data (4 bytes) + buf1 + main_read
+<div class="highlight"><pre><span></span>data (4*8 bytes) + buf1 + main_read
    ｜              |
 buf2 - 0x20     rbp(buf2)
 </pre></div>
 
-<p>這樣輸入以後，就可以把 4 bytes 的 ROP chain 寫入 <code>buf2 - 0x20</code> ，然後再跳回 <code>buf1</code> </p>
+<p>這樣輸入以後，就可以把 4*8 bytes 的 ROP chain 寫入 <code>buf2 - 0x20</code> ，然後再跳回 <code>buf1</code> </p>
 <p>接著就重複執行以上兩步就可以了，需要注意的是，如果每次都是給 <code>buf2</code> 會一直覆蓋掉，所以要一直更新位置</p>
 <div class="highlight"><pre><span></span>+-------------+------+-------------+-------------+--------------+
 | buf2 - 0x20 | buf2 | buf2 + 0x20 | buf2 + 0x40 |     ...      |
