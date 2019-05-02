@@ -1195,15 +1195,15 @@ ret             ROP gadget
 </ol>
 <h2 id="fixed-size-migration">Fixed Size Migration</h2>
 <p>在不能控制輸入長度時，就只能使用原本的 <code>read</code> 來多次輸入 ROP chain</p>
-<p>架設有一個 <code>read</code> 如下，只能夠輸入一個 Gadget</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + rbp + ret
+<p>假設有一個 <code>read</code> 輸入後如下，只能夠輸入一個 Gadget</p>
+<div class="highlight"><pre><span></span>payload (4*8 bytes) + rbp + ret
 </pre></div>
 
 <p>這時候就只能 return 到原本的 <code>read</code> (以下稱 <code>main_read</code>)</p>
 <p>仔細觀察一下會發現 <code>main_read</code> 其實會將輸入存到 <code>rbp - 0x20</code>，可以利用這個特性來寫入 ROP chain</p>
 <h3 id="migration">第一次 migration</h3>
 <p>第一次只是為了將 stack 移動到 buf 上而已</p>
-<div class="highlight"><pre><span></span>payload (4 bytes) + buf1 + main_read
+<div class="highlight"><pre><span></span>payload (4*8 bytes) + buf1 + main_read
 </pre></div>
 
 <ol>
