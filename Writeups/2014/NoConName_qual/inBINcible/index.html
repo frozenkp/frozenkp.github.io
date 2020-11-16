@@ -1,1170 +1,89 @@
-
-
-
-
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
-    
-    
-      
-        <title>inBINcible - frozenkp's Blog</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.8d40d89b.css">
-      
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.6079476c.css">
-      
-    
-    
-      <script src="../../../../assets/javascripts/modernizr.1aa3b519.js"></script>
-    
-    
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-      
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    
-    
-  </head>
+<html lang="en">
+<head>
   
-    
-    
-    <body dir="ltr" data-md-color-primary="deep-orange" data-md-color-accent="">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-      <a href="#inbincible" tabindex="1" class="md-skip">
-        Skip to content
+    
+    
+    <link rel="shortcut icon" href="../../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>inBINcible - frozenkp's Blog</title>
+    <link href="../../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "inBINcible", url: "#_top", children: [
+              {title: "\u89c0\u5bdf", url: "#_1" },
+              {title: "\u89e3\u6cd5", url: "#_3" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../../js/base.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../2015/B-Sides_Vancouver/Delphi/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../../.." title="frozenkp's Blog" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon">security</i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            
-              <span class="md-header-nav__topic">
-                frozenkp's Blog
-              </span>
-              <span class="md-header-nav__topic">
-                inBINcible
-              </span>
-            
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          
-            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
-            
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
+      <a href="../../../2015/B-Sides_Vancouver/Delphi/" class="btn btn-xs btn-link">
+        Delphi
+      </a>
     </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../../.." class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../../.." class="btn btn-xs btn-link">
+        HOME
+      </a>
+    </div>
+    
   </div>
-</div>
-          
-        
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-
-  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      frozenkp/frozenkp
-    </div>
-  </a>
-
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="drawer">
-    <span class="md-nav__button md-logo">
-      
-        <i class="md-icon">security</i>
-      
-    </span>
-    frozenkp's Blog
-  </label>
-  
-    <div class="md-nav__source">
-      
-
-
-  
-
-
-  <a href="https://github.com/frozenkp/frozenkp.github.io/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      frozenkp/frozenkp
-    </div>
-  </a>
-
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../../.." title="HOME" class="md-nav__link">
-      HOME
-    </a>
-  </li>
 
     
-      
-      
-      
 
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
-    
-    <label class="md-nav__link" for="nav-2">
-      Writeups
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Writeups
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
-    
-    <label class="md-nav__link" for="nav-2-1">
-      2014
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-1">
-        2014
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1" checked>
-    
-    <label class="md-nav__link" for="nav-2-1-1">
-      NoConName qual
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-1-1">
-        NoConName qual
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        inBINcible
-      </label>
-    
-    <a href="./" title="inBINcible" class="md-nav__link md-nav__link--active">
-      inBINcible
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="觀察" class="md-nav__link">
-    觀察
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="起手式" class="md-nav__link">
-    起手式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#go" title="go 起手式" class="md-nav__link">
-    go 起手式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#main" title="分析 main" class="md-nav__link">
-    分析 main
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#func001" title="分析 func.001" class="md-nav__link">
-    分析 func.001
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="解法" class="md-nav__link">
-    解法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xor-key" title="xor key" class="md-nav__link">
-    xor key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ans" title="ans" class="md-nav__link">
-    ans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xor" title="xor" class="md-nav__link">
-    xor
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
-    
-    <label class="md-nav__link" for="nav-2-2">
-      2015
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-2">
-        2015
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1">
-    
-    <label class="md-nav__link" for="nav-2-2-1">
-      B-Sides Vancouver
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-2-1">
-        B-Sides Vancouver
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2015/B-Sides_Vancouver/Delphi/" title="Delphi" class="md-nav__link">
-      Delphi
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
-    
-    <label class="md-nav__link" for="nav-2-3">
-      2017
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-3">
-        2017
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1">
-    
-    <label class="md-nav__link" for="nav-2-3-1">
-      HITB CTF
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-3-1">
-        HITB CTF
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/HITB_CTF/2017_Dating_in_Singapore/" title="2017, Dating in Singapore" class="md-nav__link">
-      2017, Dating in Singapore
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/HITB_CTF/Flying_High/" title="Flying_High" class="md-nav__link">
-      Flying_High
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/HITB_CTF/Pasty/" title="Pasty" class="md-nav__link">
-      Pasty
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2">
-    
-    <label class="md-nav__link" for="nav-2-3-2">
-      seccon CTF
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-3-2">
-        seccon CTF
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/seccon_CTF/Qubic_Rube/" title="Qubic Rube" class="md-nav__link">
-      Qubic Rube
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2017/seccon_CTF/putchar_music/" title="putchar music" class="md-nav__link">
-      putchar music
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
-    
-    <label class="md-nav__link" for="nav-2-4">
-      2018
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-4">
-        2018
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-1" type="checkbox" id="nav-2-4-1">
-    
-    <label class="md-nav__link" for="nav-2-4-1">
-      BambooFox CTF
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-4-1">
-        BambooFox CTF
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/BambooFox_CTF/water-impossible/" title="water-impossible" class="md-nav__link">
-      water-impossible
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/BambooFox_CTF/infant-gotoheaven/" title="infant-gotoheaven" class="md-nav__link">
-      infant-gotoheaven
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/BambooFox_CTF/infant-gogogo/" title="infant-gogogo" class="md-nav__link">
-      infant-gogogo
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4-2" type="checkbox" id="nav-2-4-2">
-    
-    <label class="md-nav__link" for="nav-2-4-2">
-      ASIS CTF qual
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-4-2">
-        ASIS CTF qual
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/ASIS_CTF_qual/Plastic/" title="Plastic" class="md-nav__link">
-      Plastic
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/ASIS_CTF_qual/Trashy_Or_Classy/" title="Trashy Or Classy" class="md-nav__link">
-      Trashy Or Classy
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../2018/ASIS_CTF_qual/Buy_flags/" title="Buy flags" class="md-nav__link">
-      Buy flags
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
-    
-    <label class="md-nav__link" for="nav-2-5">
-      Others
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-5">
-        Others
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5-1" type="checkbox" id="nav-2-5-1">
-    
-    <label class="md-nav__link" for="nav-2-5-1">
-      pwnable.tw
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-5-1">
-        pwnable.tw
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/pwnable.tw/Start/" title="Start" class="md-nav__link">
-      Start
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/pwnable.tw/orw/" title="orw" class="md-nav__link">
-      orw
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/pwnable.tw/hacknote/" title="hacknote" class="md-nav__link">
-      hacknote
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/pwnable.tw/dubblesort/" title="dubblesort" class="md-nav__link">
-      dubblesort
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Others/pwnable.tw/criticalheap/" title="criticalheap" class="md-nav__link">
-      criticalheap
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Pwn
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Pwn
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../pwn/stack_migration/" title="Stack Migration" class="md-nav__link">
-      Stack Migration
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../pwn/format_string/" title="Format String" class="md-nav__link">
-      Format String
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Reverse
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Reverse
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../reverse/radare2/" title="radare2" class="md-nav__link">
-      radare2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../reverse/go/" title="Go" class="md-nav__link">
-      Go
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Tools
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Tools
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../tools/docker/" title="Docker" class="md-nav__link">
-      Docker
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      Algorithm
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Algorithm
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../../algorithm/kdtree/" title="k-d tree" class="md-nav__link">
-      k-d tree
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="觀察" class="md-nav__link">
-    觀察
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="起手式" class="md-nav__link">
-    起手式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#go" title="go 起手式" class="md-nav__link">
-    go 起手式
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#main" title="分析 main" class="md-nav__link">
-    分析 main
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#func001" title="分析 func.001" class="md-nav__link">
-    分析 func.001
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="解法" class="md-nav__link">
-    解法
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#xor-key" title="xor key" class="md-nav__link">
-    xor key
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ans" title="ans" class="md-nav__link">
-    ans
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#xor" title="xor" class="md-nav__link">
-    xor
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                  <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/Writeups/2014/NoConName_qual/inBINcible.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
-                <h1 id="inbincible">inBINcible</h1>
+    <h1 id="inbincible">inBINcible</h1>
 <blockquote>
 <p>Challenge Link: Nope</p>
 <p>Category: reverse</p>
@@ -1174,18 +93,16 @@
 <p><a href="https://mega.co.nz/#!sER23Y6Q!zN_jO3hT6q8onHj6B-qFeapb7vif81omSa2Ap0Or9Kk">inbincible</a></p>
 <h2 id="_1">觀察</h2>
 <p>這支程式執行後直接輸出 <code>Nope!</code> ，沒有任何輸入</p>
-<div class="highlight"><pre><span></span>% ./inbincible                   
+<div class="highlight"><pre><span></span><code>% ./inbincible                   
 Nope!
-</pre></div>
-
+</code></pre></div>
 <h3 id="_2">起手式</h3>
 <p>這個執行檔是 32 位元的，且是 static link</p>
-<div class="highlight"><pre><span></span>% file inbincible
+<div class="highlight"><pre><span></span><code>% file inbincible
 inbincible: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, not stripped
-</pre></div>
-
+</code></pre></div>
 <p>發現 <code>main.main</code> 應該是 go 的執行檔</p>
-<div class="highlight"><pre><span></span>% objdump -M intel -d inbincible
+<div class="highlight"><pre><span></span><code>% objdump -M intel -d inbincible
 inbincible：     檔案格式 elf32-i386
 
 
@@ -1200,55 +117,48 @@ Disassembly of section .text:
  8048c15:       31 ff                   xor    edi,edi
  8048c17:       31 c0                   xor    eax,eax
  ...
-</pre></div>
-
+</code></pre></div>
 <h3 id="go">go 起手式</h3>
 <p>總共有兩個函式在 main package 中</p>
-<div class="highlight"><pre><span></span>% go tool objdump inbincible | grep &#39;TEXT main\.&#39; 
+<div class="highlight"><pre><span></span><code>% go tool objdump inbincible | grep &#39;TEXT main\.&#39; 
 TEXT main.main(SB) /home/n/ctf/ncn_quals_2014/rev400/main.go
 TEXT main.func.001(SB) /home/n/ctf/ncn_quals_2014/rev400/main.go
 TEXT main.init(SB) /home/n/ctf/ncn_quals_2014/rev400/main.go
-</pre></div>
-
+</code></pre></div>
 <h3 id="main">分析 main</h3>
 <p>過程中發現有取出 <code>os.Args</code>，可能是藉由參數輸入</p>
-<div class="highlight"><pre><span></span>   0x8048ef1 &lt;main.main+753&gt;:   cmp    DWORD PTR ds:0x814e17c,0x1
+<div class="highlight"><pre><span></span><code>   0x8048ef1 &lt;main.main+753&gt;:   cmp    DWORD PTR ds:0x814e17c,0x1
    0x8048ef8 &lt;main.main+760&gt;:   jbe    0x804937d &lt;main.main+1917&gt;
 =&gt; 0x8048efe &lt;main.main+766&gt;:   mov    ebx,DWORD PTR ds:0x814e178
    0x8048f04 &lt;main.main+772&gt;:   add    ebx,0x8
    0x8048f07 &lt;main.main+775&gt;:   mov    esi,DWORD PTR [ebx+0x4]
-</pre></div>
-
-<div class="highlight"><pre><span></span>gdb-peda$ x/10gx 0x814e178
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>gdb-peda$ x/10gx 0x814e178
 0x814e178 &lt;os.Args&gt;:    0x0000000218300000      0x0000000000000002
 0x814e188 &lt;persistent&gt;: 0xf7fc91a400000000      0x00000000f7ff9000
 0x814e198 &lt;reflect.dummy&gt;:      0x0000000000000000      0x0000000000000000
 0x814e1a8 &lt;sync.allPools&gt;:      0x000000000814e03c      0x0000000000000000
 0x814e1b8 &lt;syscall.envs&gt;:       0x0000004e1830e000      0x000000000000004e
-</pre></div>
-
+</code></pre></div>
 <p>接著比較 <code>esi</code> 和 <code>ebp</code> ，此時的 <code>ebp</code> 是固定的 <code>0x10</code> ，而 <code>esi</code> 是參數的長度</p>
 <p>猜測參數長度應該要是 <code>0x10</code></p>
-<div class="highlight"><pre><span></span>   0x8048f07 &lt;main.main+775&gt;:   mov    esi,DWORD PTR [ebx+0x4]
+<div class="highlight"><pre><span></span><code>   0x8048f07 &lt;main.main+775&gt;:   mov    esi,DWORD PTR [ebx+0x4]
    0x8048f0a &lt;main.main+778&gt;:   mov    ebx,DWORD PTR [esp+0x6c]
    0x8048f0e &lt;main.main+782&gt;:   mov    ebp,DWORD PTR [ebx+0x4]
 =&gt; 0x8048f11 &lt;main.main+785&gt;:   cmp    esi,ebp
    0x8048f13 &lt;main.main+787&gt;:   je     0x8049048 &lt;main.main+1096&gt;
    0x8048f19 &lt;main.main+793&gt;:   xor    ecx,ecx
    0x8048f1b &lt;main.main+795&gt;:   mov    ebp,DWORD PTR [esp+0x88]
-</pre></div>
-
+</code></pre></div>
 <h3 id="func001">分析 func.001</h3>
 <p>在中間發現 reverse 題常見的 xor ，目標是 <code>ecx</code> 及 <code>ebp</code> </p>
 <p>此時的 <code>ecx</code> 是 <code>0x12</code> ，<code>ebp</code> 則是參數的第一個字<code>x47 ( 'G' )</code></p>
-<div class="highlight"><pre><span></span>0x8049456 &lt;main.func+150&gt;:   xor    ecx,ebp
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>0x8049456 &lt;main.func+150&gt;:   xor    ecx,ebp
+</code></pre></div>
 <p>接著比較了 <code>cl</code> 及 <code>al</code></p>
 <p>此時的 <code>cl</code> 是 xor 的結果，<code>al</code> 是前面取出的值</p>
-<div class="highlight"><pre><span></span>0x804946a &lt;main.func+170&gt;:   cmp    cl,al
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>0x804946a &lt;main.func+170&gt;:   cmp    cl,al
+</code></pre></div>
 <p>如果兩者一樣的話，會透過 go channel 送出 0x1 給 main</p>
 <p>猜測可能是只要 16 個字經過 xor 以後都一樣就可以通過了</p>
 <h2 id="_3">解法</h2>
@@ -1256,97 +166,55 @@ TEXT main.init(SB) /home/n/ctf/ncn_quals_2014/rev400/main.go
 <h3 id="xor-key">xor key</h3>
 <p>實際查看該位置後發現 key 只有 5 bytes ，經過測試後發現這 5 bytes 會一直循環</p>
 <p>也就是 <code>0x12, 0x45, 0x33, 0x87, 0x65, 0x12, 0x45, 0x33, 0x87, 0x65, 0x12, 0x45, 0x33, 0x87, 0x65, 0x12</code></p>
-<div class="highlight"><pre><span></span>gdb-peda$ x/2gx 0x18300024-0x8
+<div class="highlight"><pre><span></span><code>gdb-peda$ x/2gx 0x18300024-0x8
 0x1830001c:     0x4533876500000000      0x0000000000000012
-</pre></div>
-
+</code></pre></div>
 <h3 id="ans">ans</h3>
-<div class="highlight"><pre><span></span>gdb-peda$ x/2gx 0x18300040
+<div class="highlight"><pre><span></span><code>gdb-peda$ x/2gx 0x18300040
 0x18300040:     0x0306330bb6447555      0x3344b247716002e9
-</pre></div>
-
+</code></pre></div>
 <h3 id="xor">xor</h3>
 <p>將兩個字串經過 xor 以後就可以得到原字串 <code>G0w1n!C0ngr4t5!!</code></p>
-                
-                  
-                
-              
-              
-                
 
+  <br>
+    
 
-              
-            </article>
-          </div>
-        </div>
-      </main>
+    
+    
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../../.." title="HOME" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                HOME
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../../2015/B-Sides_Vancouver/Delphi/" title="Delphi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Delphi
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../../2015/B-Sides_Vancouver/Delphi/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../../2015/B-Sides_Vancouver/Delphi/" class="btn btn-xs btn-link">
+        Delphi
+      </a>
     </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="http://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
-      
-        
-      
+    
+    <div class="wm-article-nav">
+      <a href="../../../.." class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../../.." class="btn btn-xs btn-link">
+        HOME
+      </a>
     </div>
+    
   </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+      <p>
+        <a href="https://github.com/frozenkp/frozenkp.github.io/edit/master/docs/Writeups/2014/NoConName_qual/inBINcible.md">Edit on frozenkp/frozenkp</a>
+      </p>
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
 </footer>
-      
-    </div>
-    
-      <script src="../../../../assets/javascripts/application.b438e6c5.js"></script>
-      
-      <script>app.initialize({version:"0.17.3",url:{base:"../../../.."}})</script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-      
-    
-    
-      
-    
-  </body>
+
+</body>
 </html>
